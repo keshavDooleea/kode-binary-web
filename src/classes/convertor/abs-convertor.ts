@@ -19,6 +19,16 @@ export abstract class AbsConvertor {
     return this.map.get(byte) === 1;
   }
 
+  get bits(): string {
+    let bits = '';
+
+    for (let [_, bit] of this.map) {
+      bits += bit;
+    }
+
+    return bits;
+  }
+
   abstract toggle(byte: number): void;
   abstract validate(): boolean;
 }
