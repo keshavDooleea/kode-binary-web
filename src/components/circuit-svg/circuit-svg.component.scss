@@ -1,0 +1,25 @@
+#byte-buttons > g {
+  cursor: pointer;
+
+  &:hover {
+    #btn-circle-32,
+    #btn-circle-16,
+    #btn-circle-8,
+    #btn-circle-4,
+    #btn-circle-2,
+    #btn-circle-1 {
+      fill: #2016c2;
+    }
+  }
+
+  &:active {
+    #btn-circle-32,
+    #btn-circle-16,
+    #btn-circle-8,
+    #btn-circle-4,
+    #btn-circle-2,
+    #btn-circle-1 {
+      opacity: 0.1;
+    }
+  }
+}

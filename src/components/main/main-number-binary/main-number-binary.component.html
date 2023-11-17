@@ -1,21 +1,17 @@
-<ng-container *ngIf="currentByte">
+<div
+  class="main-nb-bin"
+  *ngIf="currentByte"
+  [ngClass]="{ lock: lockComponent }"
+>
   <div class="convert-text">
     Convert <span>{{ currentByte }}</span> in binary
   </div>
 
   <div class="main-body">
-    <div class="buttons">
-      <button
-        class="circuit-btn"
-        [id]="byte"
-        *ngFor="let byte of bytes"
-        (click)="onCircuitButtonClicked(byte)"
-        [ngClass]="{ active: isClicked(byte) }"
-      >
-        {{ byte }}
-      </button>
+    <div class="circuit">
+      <app-circuit-svg
+        (byteEmitter)="onCircuitButtonClicked($event)"
+      ></app-circuit-svg>
     </div>
-
-    <div class="circuit"></div>
   </div>
-</ng-container>
+</div>
