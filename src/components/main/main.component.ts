@@ -1,29 +1,17 @@
-import { Component } from '@angular/core';
-import { ByteService } from 'src/services/byte/byte.service';
+import { Component, OnDestroy } from '@angular/core';
+import { Router } from 'src/classes/router/router';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
-export class MainComponent {
-  constructor(private byteService: ByteService) {
-    this.byteService.setNewByte();
+export class MainComponent extends Router implements OnDestroy {
+  constructor() {
+    super();
   }
 
-  get currentByte(): number | null {
-    return this.byteService.currentByte;
-  }
-
-  get bytes(): number[] {
-    return this.byteService.bytes;
-  }
-
-  onCircuitButtonClicked(byte: number) {
-    this.byteService.convertor.toggle(byte);
-  }
-
-  isClicked(byte: number): boolean {
-    return this.byteService.convertor.isByteClicked(byte);
+  ngOnDestroy(): void {
+    this.routerDestroy();
   }
 }

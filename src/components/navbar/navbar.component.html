@@ -1,6 +1,13 @@
 <h2>{{ appTitle }}</h2>
 
 <div class="navbar-items">
-  <p class="active">Binary to Number</p>
-  <p>Number to Binary</p>
+  <a [ngClass]="{ active: !isBinToNum }" [routerLink]="['/']" [queryParams]="{}"
+    >Number to Binary</a
+  >
+  <a
+    [ngClass]="{ active: isBinToNum }"
+    [routerLink]="['/']"
+    [queryParams]="{ type: binToNbQueryParam }"
+    >Binary to Number</a
+  >
 </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AbsConvertor } from 'src/classes/abs-convertor';
-import { NumberToBinary } from 'src/classes/number-binary-convertor';
+import { AbsConvertor } from 'src/classes/convertor/abs-convertor';
+import { NumberToBinary } from 'src/classes/convertor/number-binary-convertor';
 
 @Injectable({
   providedIn: 'root',
