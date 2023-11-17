@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Confetti } from 'src/classes/confetti/confetti';
 import { ByteService } from 'src/services/byte/byte.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ByteService } from 'src/services/byte/byte.service';
 })
 export class MainNumberBinaryComponent {
   constructor(private byteService: ByteService) {
-    this.byteService.setNewByte();
+    this.generateNewByte();
   }
 
   get currentByte(): number | null {
@@ -19,8 +20,18 @@ export class MainNumberBinaryComponent {
     return this.byteService.bytes;
   }
 
+  private generateNewByte(): void {
+    this.byteService.setNewByte();
+  }
+
   onCircuitButtonClicked(byte: number) {
     this.byteService.convertor.toggle(byte);
+
+    const isMatch = this.byteService.convertor.validate();
+    if (isMatch) {
+      Confetti.throwRandom();
+      setTimeout(() => this.generateNewByte(), 2000);
+    }
   }
 
   isClicked(byte: number): boolean {

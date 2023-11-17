@@ -20,5 +20,5 @@ export abstract class AbsConvertor {
   }
 
   abstract toggle(byte: number): void;
-  protected abstract validate(): void;
+  abstract validate(): boolean;
 }

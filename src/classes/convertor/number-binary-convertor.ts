@@ -8,7 +8,7 @@ export class NumberToBinary extends AbsConvertor {
     this.validate();
   }
 
-  protected validate(): void {
+  validate(): boolean {
     let total = 0;
     for (let [byte, bit] of this.map) {
       if (bit === 1) {
@@ -16,9 +16,6 @@ export class NumberToBinary extends AbsConvertor {
       }
     }
 
-    if (total === this.currentByte) {
-      // throw confetti
-      console.log('GOT IT');
-    }
+    return total === this.currentByte;
   }
 }
