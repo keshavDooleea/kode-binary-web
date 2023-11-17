@@ -1,3 +1,32 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .convert-text span {
   font-weight: bold;
+}
+
+.main-body {
+  flex: 1;
+  padding: var(--padding) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding);
+
+  .buttons {
+    display: flex;
+    gap: var(--gap);
+
+    .circuit-btn.active {
+      background-color: #ddd;
+    }
+  }
+
+  .circuit {
+    background-color: red;
+    flex: 1;
+  }
 }
