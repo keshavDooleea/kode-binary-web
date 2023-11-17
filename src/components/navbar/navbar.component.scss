@@ -1,0 +1,28 @@
+:host {
+  background-color: var(--secBkgColor);
+  box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.2);
+  padding: calc(var(--padding) / 3) var(--padding);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 200px;
+
+  h2 {
+    color: #8ab4f8;
+  }
+
+  .navbar-items {
+    display: flex;
+    gap: calc(var(--gap) * 2);
+
+    p {
+      opacity: 0.6;
+      cursor: pointer;
+
+      &.active {
+        opacity: 1;
+        font-weight: bold;
+      }
+    }
+  }
+}
