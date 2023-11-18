@@ -16,11 +16,11 @@ export class MainNumberBinaryComponent implements OnInit {
     private byteService: ByteService,
     private ledService: LedsService,
     private screenService: ScreenService
-  ) {
+  ) {}
+
+  ngOnInit(): void {
     this.generateNewByte();
   }
-
-  ngOnInit(): void {}
 
   get currentByte(): number | null {
     return this.byteService.currentByte;
@@ -35,21 +35,23 @@ export class MainNumberBinaryComponent implements OnInit {
     this.ledService.resetLEDs();
     this.screenService.refresh();
     this.lockComponent = false;
+    this.ledService.setPowerOn();
   }
 
-  onCircuitButtonClicked(byte: number) {
+  async onCircuitButtonClicked(byte: number) {
     this.byteService.convertor.toggle(byte);
     this.ledService.handleLEDs(byte);
     this.screenService.updateBinaryCode();
-    this.validateSequence();
+    await this.validateSequence();
   }
 
-  private validateSequence(): void {
+  private async validateSequence(): Promise<void> {
     const isMatch = this.byteService.convertor.validate();
     if (!isMatch) return;
 
     this.lockComponent = true;
     Confetti.throwRandom();
+    await this.ledService.blinkPower();
     setTimeout(() => this.generateNewByte(), 2000);
   }
 }

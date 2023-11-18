@@ -6,3 +6,13 @@ export const circuit = {
   LED_BYTE: 'led-byte-',
   LED: 'led-',
 };
+
+export const led = {
+  ON: '#FF8000',
+  OFF: '#fff',
+};
+
+export const power = {
+  ON: 'yellow',
+  OFF: 'red',
+};

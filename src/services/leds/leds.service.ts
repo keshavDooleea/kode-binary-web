@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ByteService } from '../byte/byte.service';
-import { getByteFromText } from 'src/utils/functions';
-import { circuit } from 'src/utils/constants';
+import { delay, getByteFromText } from 'src/utils/functions';
+import { circuit, led, power } from 'src/utils/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -9,18 +9,8 @@ import { circuit } from 'src/utils/constants';
 export class LedsService {
   constructor(private byteService: ByteService) {}
 
-  onColor(): string {
-    return '#FF8000';
-  }
-
-  offColor(): string {
-    return '#fff';
-  }
-
   getInverseColor(byte: number): string {
-    return this.byteService.convertor.isByteClicked(byte)
-      ? this.onColor()
-      : this.offColor();
+    return this.byteService.convertor.isByteClicked(byte) ? led.ON : led.OFF;
   }
 
   handleLEDs(byte: number): void {
@@ -33,8 +23,33 @@ export class LedsService {
 
     leds.forEach((ledGroup) => {
       const byte = getByteFromText(ledGroup.id);
-      this.setLEDColor(byte, this.offColor());
+      this.setLEDColor(byte, led.OFF);
     });
+  }
+
+  private get powerLED(): HTMLElement | null {
+    return document.querySelector('#power circle');
+  }
+
+  setPowerOn(): void {
+    this.powerLED?.setAttribute('fill', power.ON);
+  }
+
+  setPowerOff(): void {
+    this.powerLED?.setAttribute('fill', power.OFF);
+  }
+
+  async blinkPower(): Promise<void> {
+    const delayMs = 200;
+    const nbOfBlinks = 4;
+
+    for (let i = 0; i < nbOfBlinks; i++) {
+      this.setPowerOff();
+      await delay(delayMs);
+      this.setPowerOn();
+      await delay(delayMs);
+      this.setPowerOff();
+    }
   }
 
   private setLEDColor(byte: number, color: string): void {

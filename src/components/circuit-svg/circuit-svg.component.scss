@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kdam+Thmor+Pro&family=Orbitron:wght@500&display=swap");
+
+#screen {
+  font-family: "Orbitron", sans-serif;
+  position: relative;
+
+  tspan {
+    position: absolute;
+  }
+}
+
 #byte-buttons > g {
   cursor: pointer;
 
