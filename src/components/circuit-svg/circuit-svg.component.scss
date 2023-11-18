@@ -14,12 +14,9 @@ svg {
   height: 100%;
 }
 
-#screen {
-  font-family: "Orbitron", sans-serif;
-  position: relative;
-
-  tspan {
-    position: absolute;
+#lcd {
+  #screen {
+    font-family: "Orbitron", sans-serif;
   }
 }
 

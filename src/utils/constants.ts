@@ -16,3 +16,8 @@ export const power = {
   ON: 'yellow',
   OFF: 'red',
 };
+
+export const screen = {
+  TEXT: 'screen',
+  lcd: 'lcd',
+};
