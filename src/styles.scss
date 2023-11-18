@@ -21,7 +21,6 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: var(--bkgColor);
-  font-family: "Kdam Thmor Pro", sans-serif;
 }
 
 button {
@@ -55,6 +54,11 @@ svg {
 #screen_num,
 #screen_bin {
   font-family: "Orbitron", sans-serif;
+}
+
+#question_mark,
+body {
+  font-family: "Kdam Thmor Pro", sans-serif;
 }
 
 .circuit-btn > g {
