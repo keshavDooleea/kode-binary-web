@@ -35,6 +35,14 @@ export class LcdService {
     this.writeBin(bits);
   }
 
+  writeError(): void {
+    this.writeBin('Error');
+  }
+
+  writeSuccess(): void {
+    this.writeBin('Bravo');
+  }
+
   updateBinaryCode(): void {
     const { bits } = this.byteService.convertor;
     this.writeBin(bits);

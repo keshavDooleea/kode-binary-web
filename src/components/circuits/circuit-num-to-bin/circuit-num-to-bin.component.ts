@@ -1,7 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Circuit } from 'src/classes/circuit-component/circuit';
-import { LcdService } from 'src/services/lcd/lcd.service';
-import { LedsService } from 'src/services/leds/leds.service';
 import { circuit } from 'src/utils/constants';
 import { getByteFromText } from 'src/utils/functions';
 

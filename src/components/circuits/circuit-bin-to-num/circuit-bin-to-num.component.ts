@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Circuit } from 'src/classes/circuit-component/circuit';
 import { circuit } from 'src/utils/constants';
 
@@ -8,6 +8,8 @@ import { circuit } from 'src/utils/constants';
   styleUrls: ['./circuit-bin-to-num.component.scss'],
 })
 export class CircuitBinToNumComponent extends Circuit implements OnInit {
+  @Output() numEmitter: EventEmitter<void> = new EventEmitter();
+
   ngOnInit(): void {
     super.init();
     this.addClickListener();
@@ -15,11 +17,7 @@ export class CircuitBinToNumComponent extends Circuit implements OnInit {
 
   private addClickListener(): void {
     const validateBtn = document.querySelector(`#${circuit.VALIDATE_BUTTON}`)!;
-
     this.addButtonClass(validateBtn);
-
-    validateBtn.addEventListener('click', () => {
-      console.log('AAA');
-    });
+    validateBtn.addEventListener('click', () => this.numEmitter.emit());
   }
 }

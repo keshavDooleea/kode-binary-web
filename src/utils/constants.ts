@@ -16,6 +16,7 @@ export const led = {
 export const power = {
   ON: 'yellow',
   OFF: 'red',
+  DOWN: 'white',
 };
 
 export const lcd = {

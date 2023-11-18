@@ -1,3 +1,6 @@
-<app-circuit-bin-to-num [ngClass]="{ lock: false }"></app-circuit-bin-to-num>
+<app-circuit-bin-to-num
+  [ngClass]="{ lock: lockComponent }"
+  (numEmitter)="onValidateClicked()"
+></app-circuit-bin-to-num>
 
 <input type="number" id="num-input" class="num-font" min="1" max="99" />

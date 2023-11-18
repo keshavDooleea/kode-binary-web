@@ -31,6 +31,10 @@ export class LedsService {
     return document.querySelector('#power circle');
   }
 
+  setPowerDown(): void {
+    this.powerLED?.setAttribute('fill', power.DOWN);
+  }
+
   setPowerOn(): void {
     this.powerLED?.setAttribute('fill', power.ON);
   }
@@ -48,8 +52,23 @@ export class LedsService {
       await delay(delayMs);
       this.setPowerOn();
       await delay(delayMs);
-      this.setPowerOff();
     }
+
+    this.setPowerOff();
+  }
+
+  async blinkError(): Promise<void> {
+    const delayMs = 200;
+    const nbOfBlinks = 4;
+
+    for (let i = 0; i < nbOfBlinks; i++) {
+      this.setPowerOff();
+      await delay(delayMs);
+      this.setPowerDown();
+      await delay(delayMs);
+    }
+
+    this.setPowerOff();
   }
 
   turnOnLEDs() {
