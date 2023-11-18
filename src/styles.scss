@@ -71,8 +71,14 @@ body {
     #btn-circle-4,
     #btn-circle-2,
     #btn-circle-1,
-    #btn-circle-validate {
+    #btn-circle-validate path {
       fill: #2016c2;
+    }
+
+    #btn-circle-question path,
+    #btn-circle-show-wires path,
+    #btn-circle-hide-wires path {
+      fill: #d1d116;
     }
   }
 
@@ -83,7 +89,10 @@ body {
     #btn-circle-4,
     #btn-circle-2,
     #btn-circle-1,
-    #btn-circle-validate {
+    #btn-circle-validate,
+    #btn-circle-question,
+    #btn-circle-show-wires,
+    #btn-circle-hide-wires {
       opacity: 0.1;
     }
   }

@@ -7,6 +7,10 @@ export const circuit = {
   LED: 'led-',
   VALIDATE_BUTTON: 'validate-button',
   WIRES: 'wires',
+  RESISTORS: 'resistors',
+  HELP_BUTTON: 'question_btn',
+  SHOW_WIRES_BUTTON: 'show_wires',
+  HIDE_WIRES_BUTTON: 'hide_wires',
 };
 
 export const led = {

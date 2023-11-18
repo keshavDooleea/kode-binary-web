@@ -12,10 +12,11 @@ export class CircuitBinToNumComponent extends Circuit implements OnInit {
 
   ngOnInit(): void {
     super.init();
-    this.addClickListener();
+    this.addClickListeners();
+    this.addCommonListeners();
   }
 
-  private addClickListener(): void {
+  private addClickListeners(): void {
     const validateBtn = document.querySelector(`#${circuit.VALIDATE_BUTTON}`)!;
     this.addButtonClass(validateBtn);
     validateBtn.addEventListener('click', () => this.numEmitter.emit());

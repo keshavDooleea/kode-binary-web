@@ -14,6 +14,7 @@ export class CircuitNumToBinComponent extends Circuit implements OnInit {
   ngOnInit(): void {
     super.init();
     this.addClickListeners();
+    this.addCommonListeners();
   }
 
   private addClickListeners(): void {
