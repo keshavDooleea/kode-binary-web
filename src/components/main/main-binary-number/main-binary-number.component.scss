@@ -1,24 +1,5 @@
 :host {
   height: 100%;
   width: 100%;
-}
-
-.main-nb-bin {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-
-.lock {
-  opacity: 0.75;
-  pointer-events: none;
-}
-
-.main-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
 }

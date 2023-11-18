@@ -1,33 +1,5 @@
 :host {
   height: 100%;
   width: 100%;
-}
-
-.main-nb-bin {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-
-.lock {
-  opacity: 0.75;
-  pointer-events: none;
-}
-
-.convert-text {
-  padding: var(--padding);
-  font-size: 2rem;
-
-  span {
-    font-weight: bold;
-  }
-}
-
-.main-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
 }

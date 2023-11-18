@@ -46,6 +46,11 @@ svg {
   height: 100%;
 }
 
+.lock {
+  opacity: 0.75;
+  pointer-events: none;
+}
+
 #lcd_num,
 #lcd_bin {
   #screen_num,

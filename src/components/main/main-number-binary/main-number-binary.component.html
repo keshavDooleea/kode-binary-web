@@ -1,11 +1,5 @@
-<div
-  class="main-nb-bin"
+<app-circuit-num-to-bin
   *ngIf="currentByte"
   [ngClass]="{ lock: lockComponent }"
->
-  <div class="main-body">
-    <app-circuit-num-to-bin
-      (byteEmitter)="onCircuitButtonClicked($event)"
-    ></app-circuit-num-to-bin>
-  </div>
-</div>
+  (byteEmitter)="onCircuitButtonClicked($event)"
+></app-circuit-num-to-bin>
