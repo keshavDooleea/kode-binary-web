@@ -62,6 +62,7 @@ export class MainBinaryNumberComponent implements OnInit {
       this.lcdService.writeError();
       await this.ledService.blinkError();
       this.lcdService.updateBinaryCode();
+      this.ledService.setPowerOn();
       this.lockComponent = false;
       return;
     }
