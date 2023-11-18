@@ -52,6 +52,14 @@ export class LedsService {
     }
   }
 
+  turnOnLEDs() {
+    for (let [byte, bit] of this.byteService.convertor.byteMap) {
+      if (bit === 1) {
+        this.setLEDColor(byte, led.ON);
+      }
+    }
+  }
+
   private setLEDColor(byte: number, color: string): void {
     const led = document.querySelector(
       `#${circuit.LED_BYTE}${byte} #${circuit.LED}${byte}`

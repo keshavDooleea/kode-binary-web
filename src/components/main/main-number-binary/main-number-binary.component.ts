@@ -31,7 +31,7 @@ export class MainNumberBinaryComponent implements OnInit {
   }
 
   private generateNewByte(): void {
-    this.byteService.setNewByte();
+    this.byteService.setNewByte(true);
     this.ledService.resetLEDs();
     this.screenService.refresh();
     this.lockComponent = false;

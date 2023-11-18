@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AbsConvertor } from 'src/classes/convertor/abs-convertor';
+import { BinaryToNumber } from 'src/classes/convertor/binary-number-convertor';
 import { NumberToBinary } from 'src/classes/convertor/number-binary-convertor';
 
 @Injectable({
@@ -28,8 +29,13 @@ export class ByteService {
     return this._convertor;
   }
 
-  setNewByte(): void {
+  setNewByte(isNumToBin: boolean): void {
     this._currentByte = Math.floor(Math.random() * this.totalBytes - 1) + 1;
-    this._convertor = new NumberToBinary(this._bytes, this._currentByte);
+
+    if (isNumToBin) {
+      this._convertor = new NumberToBinary(this._bytes, this._currentByte);
+    } else {
+      this._convertor = new BinaryToNumber(this._bytes, this._currentByte);
+    }
   }
 }

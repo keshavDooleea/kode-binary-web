@@ -1,32 +1,37 @@
 export type Binary = 0 | 1;
+export type ByteMap = Map<number, Binary>;
 
 export abstract class AbsConvertor {
-  protected map!: Map<number, Binary>;
+  protected _map!: ByteMap;
 
-  constructor(private totalBytes: number[], protected currentByte: number) {
+  constructor(protected totalBytes: number[], protected currentByte: number) {
     this.init();
   }
 
-  private init(): void {
-    this.map = new Map();
+  protected init(): void {
+    this._map = new Map();
 
     this.totalBytes.forEach((byte) => {
-      this.map.set(byte, 0);
+      this._map.set(byte, 0);
     });
   }
 
   isByteClicked(byte: number): boolean {
-    return this.map.get(byte) === 1;
+    return this._map.get(byte) === 1;
   }
 
   get bits(): string {
     let bits = '';
 
-    for (let [_, bit] of this.map) {
+    for (let [_, bit] of this._map) {
       bits += bit;
     }
 
     return bits;
+  }
+
+  get byteMap(): ByteMap {
+    return this._map;
   }
 
   abstract toggle(byte: number): void;
