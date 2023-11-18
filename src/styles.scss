@@ -31,6 +31,11 @@ button {
   box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.25);
   border-radius: 4px;
   cursor: pointer;
+
+  &:hover {
+    filter: brightness(90%);
+    outline: 1px solid #ccc;
+  }
 }
 
 a {
@@ -70,11 +75,11 @@ body {
     #btn-circle-8,
     #btn-circle-4,
     #btn-circle-2,
-    #btn-circle-1,
-    #btn-circle-validate path {
+    #btn-circle-1 {
       fill: #2016c2;
     }
 
+    #btn-circle-validate path,
     #btn-circle-question path,
     #btn-circle-show-wires path,
     #btn-circle-hide-wires path {

@@ -17,12 +17,15 @@ export class DialogService {
   }
 
   private toggleTo(newType: DialogT, value: boolean): void {
+    this.closeAll();
+    this._dialogs.set(newType, value);
+    this.subject.next(this._dialogs);
+  }
+
+  closeAll(): void {
     for (let [type, _] of this._dialogs) {
       this._dialogs.set(type, false);
     }
-
-    this._dialogs.set(newType, value);
-    this.subject.next(this._dialogs);
   }
 
   openNumBinDialog(): void {
