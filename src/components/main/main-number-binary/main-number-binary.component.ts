@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Confetti } from 'src/classes/confetti/confetti';
 import { ByteService } from 'src/services/byte/byte.service';
+import { LcdService } from 'src/services/lcd/lcd.service';
 import { LedsService } from 'src/services/leds/leds.service';
-import { ScreenService } from 'src/services/screen/screen.service';
 
 @Component({
   selector: 'app-main-number-binary',
@@ -15,7 +15,7 @@ export class MainNumberBinaryComponent implements OnInit {
   constructor(
     private byteService: ByteService,
     private ledService: LedsService,
-    private screenService: ScreenService
+    private lcdService: LcdService
   ) {}
 
   ngOnInit(): void {
@@ -33,15 +33,19 @@ export class MainNumberBinaryComponent implements OnInit {
   private generateNewByte(): void {
     this.byteService.setNewByte(true);
     this.ledService.resetLEDs();
-    this.screenService.refresh();
     this.lockComponent = false;
     this.ledService.setPowerOn();
+
+    setTimeout(() => {
+      this.lcdService.writeZeros();
+      this.lcdService.updateNumber();
+    });
   }
 
   async onCircuitButtonClicked(byte: number) {
     this.byteService.convertor.toggle(byte);
     this.ledService.handleLEDs(byte);
-    this.screenService.updateBinaryCode();
+    this.lcdService.updateBinaryCode();
     await this.validateSequence();
   }
 

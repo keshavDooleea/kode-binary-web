@@ -17,7 +17,9 @@ export const power = {
   OFF: 'red',
 };
 
-export const screen = {
-  TEXT: 'screen',
-  lcd: 'lcd',
+export const lcd = {
+  NUM_LCD: 'lcd_num',
+  NUM_DISPLAY: 'screen_num',
+  BIN_LCD: 'lcd_bin',
+  BIN_DISPLAY: 'screen_bin',
 };

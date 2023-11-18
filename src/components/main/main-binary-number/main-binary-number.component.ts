@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ByteService } from 'src/services/byte/byte.service';
+import { LcdService } from 'src/services/lcd/lcd.service';
 import { LedsService } from 'src/services/leds/leds.service';
-import { ScreenService } from 'src/services/screen/screen.service';
 
 @Component({
   selector: 'app-main-binary-number',
@@ -12,7 +12,7 @@ export class MainBinaryNumberComponent implements OnInit {
   constructor(
     private byteService: ByteService,
     private ledService: LedsService,
-    private screenService: ScreenService
+    private lcdService: LcdService
   ) {}
 
   ngOnInit(): void {
@@ -26,8 +26,12 @@ export class MainBinaryNumberComponent implements OnInit {
   generateNewByte(): void {
     this.byteService.setNewByte(false);
     this.ledService.turnOnLEDs();
-    this.screenService.updateBinaryCode();
     // this.lockComponent = false;
     this.ledService.setPowerOn();
+
+    setTimeout(() => {
+      this.lcdService.updateBinaryCode();
+      this.lcdService.writeNum(0);
+    });
   }
 }

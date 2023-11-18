@@ -3,13 +3,9 @@
   *ngIf="currentByte"
   [ngClass]="{ lock: lockComponent }"
 >
-  <div class="convert-text">
-    Convert <span>{{ currentByte }}</span> in binary
-  </div>
-
   <div class="main-body">
-    <app-circuit-svg
+    <app-circuit-num-to-bin
       (byteEmitter)="onCircuitButtonClicked($event)"
-    ></app-circuit-svg>
+    ></app-circuit-num-to-bin>
   </div>
 </div>

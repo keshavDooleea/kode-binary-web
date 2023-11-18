@@ -7,7 +7,8 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
 import { MainComponent } from '../components/main/main.component';
 import { MainNumberBinaryComponent } from '../components/main/main-number-binary/main-number-binary.component';
 import { MainBinaryNumberComponent } from '../components/main/main-binary-number/main-binary-number.component';
-import { CircuitSvgComponent } from '../components/circuit-svg/circuit-svg.component';
+import { CircuitNumToBinComponent } from '../components/circuits/circuit-num-to-bin/circuit-num-to-bin.component';
+import { CircuitBinToNumComponent } from '../components/circuits/circuit-bin-to-num/circuit-bin-to-num.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CircuitSvgComponent } from '../components/circuit-svg/circuit-svg.compo
     MainComponent,
     MainNumberBinaryComponent,
     MainBinaryNumberComponent,
-    CircuitSvgComponent,
+    CircuitNumToBinComponent,
+    CircuitBinToNumComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot([])],
   providers: [],

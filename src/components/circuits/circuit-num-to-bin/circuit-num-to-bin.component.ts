@@ -1,24 +1,20 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Circuit } from 'src/classes/circuit-component/circuit';
+import { LcdService } from 'src/services/lcd/lcd.service';
 import { LedsService } from 'src/services/leds/leds.service';
 import { circuit } from 'src/utils/constants';
 import { getByteFromText } from 'src/utils/functions';
 
 @Component({
-  selector: 'app-circuit-svg',
-  templateUrl: './circuit-svg.component.html',
-  styleUrls: ['./circuit-svg.component.scss'],
+  selector: 'app-circuit-num-to-bin',
+  templateUrl: './circuit-num-to-bin.component.html',
+  styleUrls: ['./circuit-num-to-bin.component.scss'],
 })
-export class CircuitSvgComponent implements OnInit {
+export class CircuitNumToBinComponent extends Circuit implements OnInit {
   @Output() byteEmitter: EventEmitter<number> = new EventEmitter();
 
-  constructor(private ledService: LedsService) {}
-
   ngOnInit(): void {
-    this.init();
-  }
-
-  private init(): void {
-    this.ledService.setPowerOn();
+    super.init();
     this.addClickListeners();
   }
 
