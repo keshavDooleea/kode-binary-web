@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ByteService } from 'src/services/byte/byte.service';
 import { LedsService } from 'src/services/leds/leds.service';
-import { ScreenService } from 'src/services/leds/screen.service';
+import { ScreenService } from 'src/services/screen/screen.service';
 
 @Component({
   selector: 'app-main-binary-number',
