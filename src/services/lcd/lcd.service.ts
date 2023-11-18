@@ -8,11 +8,11 @@ import { lcd } from 'src/utils/constants';
 export class LcdService {
   constructor(private byteService: ByteService) {}
 
-  private get numDisplay(): HTMLElement | null {
+  get numDisplay(): HTMLElement | null {
     return document.querySelector(`#${lcd.NUM_LCD} #${lcd.NUM_DISPLAY} tspan`);
   }
 
-  private get binDisplay(): HTMLElement | null {
+  get binDisplay(): HTMLElement | null {
     return document.querySelector(`#${lcd.BIN_LCD} #${lcd.BIN_DISPLAY} tspan`);
   }
 

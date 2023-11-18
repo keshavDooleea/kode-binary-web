@@ -51,10 +51,36 @@ svg {
   pointer-events: none;
 }
 
-#lcd_num,
-#lcd_bin {
-  #screen_num,
-  #screen_bin {
-    font-family: "Orbitron", sans-serif;
+.num-font,
+#screen_num,
+#screen_bin {
+  font-family: "Orbitron", sans-serif;
+}
+
+.circuit-btn > g {
+  cursor: pointer;
+
+  &:hover {
+    #btn-circle-32,
+    #btn-circle-16,
+    #btn-circle-8,
+    #btn-circle-4,
+    #btn-circle-2,
+    #btn-circle-1,
+    #btn-circle-validate {
+      fill: #2016c2;
+    }
+  }
+
+  &:active {
+    #btn-circle-32,
+    #btn-circle-16,
+    #btn-circle-8,
+    #btn-circle-4,
+    #btn-circle-2,
+    #btn-circle-1,
+    #btn-circle-validate {
+      opacity: 0.1;
+    }
   }
 }

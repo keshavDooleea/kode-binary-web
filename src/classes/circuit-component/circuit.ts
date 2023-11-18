@@ -16,4 +16,8 @@ export abstract class Circuit {
     this.lcdService.writeZeros();
     this.lcdService.writeNum(0);
   }
+
+  addButtonClass(button: Element): void {
+    button.classList.add('circuit-btn');
+  }
 }

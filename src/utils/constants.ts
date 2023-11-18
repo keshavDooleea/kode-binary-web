@@ -5,6 +5,7 @@ export const circuit = {
   LEDS: 'led-buttons',
   LED_BYTE: 'led-byte-',
   LED: 'led-',
+  VALIDATE_BUTTON: 'validate-buttons',
 };
 
 export const led = {

@@ -16,6 +16,7 @@ export class MainBinaryNumberComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.makeNumEditable();
     this.generateNewByte();
   }
 
@@ -23,7 +24,22 @@ export class MainBinaryNumberComponent implements OnInit {
     return this.byteService.convertor.bits;
   }
 
-  generateNewByte(): void {
+  private get numInput(): HTMLInputElement {
+    return document.getElementById('num-input') as HTMLInputElement;
+  }
+
+  private makeNumEditable(): void {
+    const lcdBoundingRect = this.lcdService.numDisplay?.getBoundingClientRect();
+    this.lcdService.numDisplay!.style.display = 'none';
+
+    if (!lcdBoundingRect || !this.numInput) return;
+
+    this.numInput.style.left = `${lcdBoundingRect?.left - 20}px`;
+    this.numInput.style.top = `${lcdBoundingRect?.top}px`;
+    this.numInput.style.width = `${lcdBoundingRect?.width * 2}px`;
+  }
+
+  private generateNewByte(): void {
     this.byteService.setNewByte(false);
     this.ledService.turnOnLEDs();
     // this.lockComponent = false;
@@ -31,7 +47,7 @@ export class MainBinaryNumberComponent implements OnInit {
 
     setTimeout(() => {
       this.lcdService.updateBinaryCode();
-      this.lcdService.writeNum(0);
+      this.numInput.value = `${this.byteService.currentByte}`;
     });
   }
 }

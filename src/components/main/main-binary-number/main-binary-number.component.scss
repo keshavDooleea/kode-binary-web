@@ -3,3 +3,13 @@
   width: 100%;
   display: flex;
 }
+
+#num-input {
+  position: absolute;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 43px;
+}

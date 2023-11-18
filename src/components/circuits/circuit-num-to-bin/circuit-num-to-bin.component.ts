@@ -20,6 +20,8 @@ export class CircuitNumToBinComponent extends Circuit implements OnInit {
 
   private addClickListeners(): void {
     document.querySelectorAll(`#${circuit.BUTTONS}`).forEach((byteButton) => {
+      this.addButtonClass(byteButton);
+
       byteButton.addEventListener('click', (event) => {
         const button = ((event as MouseEvent).target as HTMLElement)
           .parentElement;
