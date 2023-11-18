@@ -20,6 +20,21 @@ export abstract class AbsConvertor {
     return this._map.get(byte) === 1;
   }
 
+  convertNumToBinary(number: number): ByteMap {
+    let binary: ByteMap = new Map();
+
+    this.totalBytes.forEach((byte) => {
+      if (number >= byte) {
+        binary.set(byte, 1);
+        number -= byte;
+      } else {
+        binary.set(byte, 0);
+      }
+    });
+
+    return binary;
+  }
+
   get bits(): string {
     let bits = '';
 
