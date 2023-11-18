@@ -9,6 +9,9 @@ import { MainNumberBinaryComponent } from '../components/main/main-number-binary
 import { MainBinaryNumberComponent } from '../components/main/main-binary-number/main-binary-number.component';
 import { CircuitNumToBinComponent } from '../components/circuits/circuit-num-to-bin/circuit-num-to-bin.component';
 import { CircuitBinToNumComponent } from '../components/circuits/circuit-bin-to-num/circuit-bin-to-num.component';
+import { NumBinDialogComponent } from '../components/dialogs/num-bin-dialog/num-bin-dialog.component';
+import { BinNumDialogComponent } from '../components/dialogs/bin-num-dialog/bin-num-dialog.component';
+import { DialogLayoutComponent } from '../components/dialogs/dialog-layout/dialog-layout.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { CircuitBinToNumComponent } from '../components/circuits/circuit-bin-to-
     MainBinaryNumberComponent,
     CircuitNumToBinComponent,
     CircuitBinToNumComponent,
+    NumBinDialogComponent,
+    BinNumDialogComponent,
+    DialogLayoutComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot([])],
   providers: [],

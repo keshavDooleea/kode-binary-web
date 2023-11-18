@@ -5,3 +5,6 @@
 <ng-template #numbToBin>
   <app-main-number-binary></app-main-number-binary>
 </ng-template>
+
+<app-num-bin-dialog *ngIf="isNumToBinOpen"></app-num-bin-dialog>
+<app-bin-num-dialog *ngIf="isBinToNumOpen"></app-bin-num-dialog>

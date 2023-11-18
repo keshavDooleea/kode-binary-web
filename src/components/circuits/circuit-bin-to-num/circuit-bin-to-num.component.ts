@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Circuit } from 'src/classes/circuit-component/circuit';
+import { DialogService } from 'src/services/dialog/dialog.service';
 import { circuit } from 'src/utils/constants';
 
 @Component({
@@ -9,6 +10,10 @@ import { circuit } from 'src/utils/constants';
 })
 export class CircuitBinToNumComponent extends Circuit implements OnInit {
   @Output() numEmitter: EventEmitter<void> = new EventEmitter();
+
+  constructor(private dialogService: DialogService) {
+    super();
+  }
 
   ngOnInit(): void {
     super.init();
@@ -20,5 +25,9 @@ export class CircuitBinToNumComponent extends Circuit implements OnInit {
     const validateBtn = document.querySelector(`#${circuit.VALIDATE_BUTTON}`)!;
     this.addButtonClass(validateBtn);
     validateBtn.addEventListener('click', () => this.numEmitter.emit());
+
+    this.helpButton.addEventListener('click', () =>
+      this.dialogService.openBinNumDialog()
+    );
   }
 }

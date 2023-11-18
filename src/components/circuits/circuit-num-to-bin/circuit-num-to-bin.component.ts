@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Circuit } from 'src/classes/circuit-component/circuit';
+import { DialogService } from 'src/services/dialog/dialog.service';
 import { circuit } from 'src/utils/constants';
 import { getByteFromText } from 'src/utils/functions';
 
@@ -10,6 +11,10 @@ import { getByteFromText } from 'src/utils/functions';
 })
 export class CircuitNumToBinComponent extends Circuit implements OnInit {
   @Output() byteEmitter: EventEmitter<number> = new EventEmitter();
+
+  constructor(private dialogService: DialogService) {
+    super();
+  }
 
   ngOnInit(): void {
     super.init();
@@ -28,5 +33,9 @@ export class CircuitNumToBinComponent extends Circuit implements OnInit {
         this.byteEmitter.emit(getByteFromText(button?.id!));
       });
     });
+
+    this.helpButton.addEventListener('click', () =>
+      this.dialogService.openNumBinDialog()
+    );
   }
 }
