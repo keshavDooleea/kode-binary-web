@@ -39,7 +39,7 @@ export class MainBinaryNumberComponent implements OnInit {
 
     this.numInput.value = `0`;
 
-    this.numInput.style.left = `${lcdBoundingRect?.left - 20}px`;
+    this.numInput.style.left = `${lcdBoundingRect?.left}px`;
     this.numInput.style.top = `${lcdBoundingRect?.top}px`;
     this.numInput.style.width = `${lcdBoundingRect?.width * 2}px`;
   }
