@@ -12,6 +12,7 @@ import { CircuitBinToNumComponent } from '../components/circuits/circuit-bin-to-
 import { NumBinDialogComponent } from '../components/dialogs/num-bin-dialog/num-bin-dialog.component';
 import { BinNumDialogComponent } from '../components/dialogs/bin-num-dialog/bin-num-dialog.component';
 import { DialogLayoutComponent } from '../components/dialogs/dialog-layout/dialog-layout.component';
+import { MainDialogsComponent } from '../components/main/main-dialogs/main-dialogs.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DialogLayoutComponent } from '../components/dialogs/dialog-layout/dialo
     NumBinDialogComponent,
     BinNumDialogComponent,
     DialogLayoutComponent,
+    MainDialogsComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot([])],
   providers: [],
