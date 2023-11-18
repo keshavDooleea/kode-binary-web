@@ -55,6 +55,7 @@ export class MainNumberBinaryComponent implements OnInit {
 
     this.lockComponent = true;
     Confetti.throwRandom();
+    this.lcdService.writeSuccess();
     await this.ledService.blinkPower();
     setTimeout(() => this.generateNewByte(), 2000);
   }
