@@ -1,0 +1,16 @@
+:host {
+  text-align: center;
+  width: 70%;
+
+  &:not(:first-child) {
+    margin-bottom: 30px;
+  }
+
+  &:nth-child(3) {
+    margin-top: 50px;
+  }
+
+  &:first-child {
+    margin-top: 10px;
+  }
+}

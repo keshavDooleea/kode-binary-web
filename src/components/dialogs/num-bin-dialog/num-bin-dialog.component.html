@@ -2,10 +2,18 @@
   <span header>Number to Binary</span>
 
   <ng-container content>
+    <app-dialog-content
+      [dialogContent]="getGuideContent()"
+    ></app-dialog-content>
+
     <img
       class="dialog-circuit-img"
       src="assets/num_to_binary_instructions.png"
       alt="number to binary instructions"
     />
+
+    <app-dialog-content [dialogContent]="getGoalContent()"></app-dialog-content>
+    <app-dialog-content [dialogContent]="getHowContent()"></app-dialog-content>
+    <app-dialog-content [dialogContent]="getNoteContent()"></app-dialog-content>
   </ng-container>
 </app-dialog-layout>

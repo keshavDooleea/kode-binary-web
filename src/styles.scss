@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kdam+Thmor+Pro&family=Orbitron:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kdam+Thmor+Pro&family=Orbitron:wght@500&display=swap&family=Poppins&display=swap");
 
 * {
   margin: 0;
@@ -65,6 +65,10 @@ svg {
 #question_mark,
 body {
   font-family: "Kdam Thmor Pro", sans-serif;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
 }
 
 .circuit-btn > g {
