@@ -28,7 +28,7 @@ export class BinNumDialogComponent implements IDialogFn {
     return {
       title: 'How to use?',
       description:
-        'Use the right screen to directly modify the number on it. \n Press the validate button to confirm your answer.',
+        'Use the right screen to directly edit the number on it.\n Press the validate button to confirm your answer.',
     };
   }
 
