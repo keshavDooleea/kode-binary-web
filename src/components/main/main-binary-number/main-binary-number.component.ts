@@ -42,6 +42,8 @@ export class MainBinaryNumberComponent implements OnInit {
     this.numInput.style.left = `${lcdBoundingRect?.left}px`;
     this.numInput.style.top = `${lcdBoundingRect?.top}px`;
     this.numInput.style.width = `${lcdBoundingRect?.width * 2}px`;
+    this.numInput.style.height = `${lcdBoundingRect?.height}px`;
+    this.numInput.style.fontSize = `${lcdBoundingRect?.height * 0.9}px`;
   }
 
   private generateNewByte(): void {

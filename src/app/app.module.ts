@@ -13,6 +13,8 @@ import { NumBinDialogComponent } from '../components/dialogs/num-bin-dialog/num-
 import { BinNumDialogComponent } from '../components/dialogs/bin-num-dialog/bin-num-dialog.component';
 import { DialogLayoutComponent } from '../components/dialogs/dialog-layout/dialog-layout.component';
 import { MainDialogsComponent } from '../components/main/main-dialogs/main-dialogs.component';
+import { WatermarkComponent } from '../components/watermarks/watermark/watermark.component';
+import { WatermarkItemComponent } from '../components/watermarks/watermark-item/watermark-item.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { MainDialogsComponent } from '../components/main/main-dialogs/main-dialo
     BinNumDialogComponent,
     DialogLayoutComponent,
     MainDialogsComponent,
+    WatermarkComponent,
+    WatermarkItemComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot([])],
   providers: [],
