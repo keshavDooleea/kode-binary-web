@@ -1,14 +1,15 @@
 :host {
   background-color: var(--secBkgColor);
-  box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.2);
+  box-shadow: 0 0 3px 1px rgba($color: #000000, $alpha: 0.1);
   padding: calc(var(--padding) / 3) var(--padding);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
   gap: 200px;
+  outline: 1px solid #c7c7c7;
 
   h2 {
-    color: #8ab4f8;
+    color: var(--appTitleColor);
   }
 
   .navbar-items {
