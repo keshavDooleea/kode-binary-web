@@ -34,13 +34,13 @@ export class CircuitBinToNumComponent
     super.destroy();
   }
 
+  onHelpButtonClicked(): void {
+    this.dialogService.openBinNumDialog();
+  }
+
   private addClickListeners(): void {
     const validateBtn = document.querySelector(`#${circuit.VALIDATE_BUTTON}`)!;
     this.addButtonClass(validateBtn);
     validateBtn.addEventListener('click', () => this.numEmitter.emit());
-
-    this.helpButton.addEventListener('click', () =>
-      this.dialogService.openBinNumDialog()
-    );
   }
 }

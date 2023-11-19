@@ -35,6 +35,10 @@ export class CircuitNumToBinComponent
     super.destroy();
   }
 
+  onHelpButtonClicked(): void {
+    this.dialogService.openNumBinDialog();
+  }
+
   private addClickListeners(): void {
     document.querySelectorAll(`#${circuit.BUTTONS}`).forEach((byteButton) => {
       this.addButtonClass(byteButton);
@@ -43,12 +47,9 @@ export class CircuitNumToBinComponent
         const button = ((event as MouseEvent).target as HTMLElement)
           .parentElement;
 
+        this.playButtonSound();
         this.byteEmitter.emit(getByteFromText(button?.id!));
       });
     });
-
-    this.helpButton.addEventListener('click', () =>
-      this.dialogService.openNumBinDialog()
-    );
   }
 }

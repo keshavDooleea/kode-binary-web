@@ -1,16 +1,19 @@
 import { inject } from '@angular/core';
 import { LcdService } from 'src/services/lcd/lcd.service';
 import { LedsService } from 'src/services/leds/leds.service';
+import { SoundService } from 'src/services/sound/sound.service';
 import { circuit } from 'src/utils/constants';
 import { hideElement, showElement } from 'src/utils/functions';
 
 export abstract class Circuit {
   private ledService: LedsService;
   private lcdService: LcdService;
+  private soundService: SoundService;
 
   constructor() {
     this.ledService = inject(LedsService);
     this.lcdService = inject(LcdService);
+    this.soundService = inject(SoundService);
   }
 
   init(): void {
@@ -57,7 +60,18 @@ export abstract class Circuit {
     this.hideWiresButton.addEventListener('click', () =>
       this.toggleElementsOnCircuit(false)
     );
+
+    this.helpButton.addEventListener('click', () => {
+      this.playButtonSound();
+      this.onHelpButtonClicked();
+    });
   }
+
+  playButtonSound(): void {
+    this.soundService.playButton();
+  }
+
+  abstract onHelpButtonClicked(): void;
 
   toggleElementsOnCircuit(shouldShow: boolean): void {
     const toggle = (selector: string): void => {
@@ -67,6 +81,8 @@ export abstract class Circuit {
           el.setAttribute('display', shouldShow ? 'block' : 'none')
         );
     };
+
+    this.playButtonSound();
 
     toggle(`#${circuit.WIRES} > *`);
     toggle(`#${circuit.RESISTORS} > *`);
