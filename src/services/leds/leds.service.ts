@@ -2,12 +2,19 @@ import { Injectable } from '@angular/core';
 import { ByteService } from '../byte/byte.service';
 import { delay, getByteFromText } from 'src/utils/functions';
 import { circuit, led, power } from 'src/utils/constants';
+import { PowerLed } from 'src/classes/power-led/power-led';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LedsService {
-  constructor(private byteService: ByteService) {}
+  private powerLed1: PowerLed;
+  private powerLed2: PowerLed;
+
+  constructor(private byteService: ByteService) {
+    this.powerLed1 = new PowerLed('1', power.OFF);
+    this.powerLed2 = new PowerLed('2', power.ON);
+  }
 
   getInverseColor(byte: number): string {
     return this.byteService.convertor.isByteClicked(byte) ? led.ON : led.OFF;
@@ -71,12 +78,22 @@ export class LedsService {
     this.setPowerOff();
   }
 
-  turnOnLEDs() {
+  turnOnLEDs(): void {
     for (let [byte, bit] of this.byteService.convertor.byteMap) {
       if (bit === 1) {
         this.setLEDColor(byte, led.ON);
       }
     }
+  }
+
+  blinkPowerLEDs(): void {
+    this.powerLed1.startToBlink();
+    this.powerLed2.startToBlink();
+  }
+
+  onDestroy(): void {
+    this.powerLed1.destroy();
+    this.powerLed2.destroy();
   }
 
   private setLEDColor(byte: number, color: string): void {

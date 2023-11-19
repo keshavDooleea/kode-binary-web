@@ -15,6 +15,7 @@ export abstract class Circuit {
 
   init(): void {
     this.ledService.setPowerOn();
+    this.ledService.blinkPowerLEDs();
     this.lcdService.writeZeros();
     this.lcdService.writeNum(0);
 
@@ -23,6 +24,10 @@ export abstract class Circuit {
     this.addButtonClass(this.helpButton);
     this.addButtonClass(this.showWiresButton);
     this.addButtonClass(this.hideWiresButton);
+  }
+
+  destroy(): void {
+    this.ledService.onDestroy();
   }
 
   get showWiresButton(): HTMLElement {

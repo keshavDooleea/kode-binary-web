@@ -1,4 +1,10 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Circuit } from 'src/classes/circuit-component/circuit';
 import { DialogService } from 'src/services/dialog/dialog.service';
 import { circuit } from 'src/utils/constants';
@@ -9,7 +15,10 @@ import { getByteFromText } from 'src/utils/functions';
   templateUrl: './circuit-num-to-bin.component.html',
   styleUrls: ['./circuit-num-to-bin.component.scss'],
 })
-export class CircuitNumToBinComponent extends Circuit implements OnInit {
+export class CircuitNumToBinComponent
+  extends Circuit
+  implements OnInit, OnDestroy
+{
   @Output() byteEmitter: EventEmitter<number> = new EventEmitter();
 
   constructor(private dialogService: DialogService) {
@@ -20,6 +29,10 @@ export class CircuitNumToBinComponent extends Circuit implements OnInit {
     super.init();
     this.addClickListeners();
     this.addCommonListeners();
+  }
+
+  ngOnDestroy(): void {
+    super.destroy();
   }
 
   private addClickListeners(): void {
