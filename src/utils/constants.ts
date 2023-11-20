@@ -29,7 +29,9 @@ export const power = {
 export const lcd = {
   NUM_LCD: 'lcd_num',
   NUM_DISPLAY: 'screen_num',
+  NUM_PARENT: 'num-screen-parent',
   BIN_LCD: 'lcd_bin',
   BIN_DISPLAY: 'screen_bin',
+  BIN_PARENT: 'bin-screen-parent',
   LANG: 'language',
 };
