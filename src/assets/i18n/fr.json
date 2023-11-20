@@ -1,4 +1,29 @@
 {
   "numberToBinary": "Nombre en Binaire",
-  "binaryToNumber": "Binaire en Nombre"
+  "binaryToNumber": "Binaire en Nombre",
+  "numberToBinaryConversion": "Conversion de Nombre en Binaire",
+  "binaryToNumberConversion": "Conversion de Binaire en Nombre",
+
+  "guide": "Guide",
+
+  "binToNumDialog": {
+    "goalKey": "Objectif",
+    "goalDesc": "Convertir le code binaire sur l'écran de gauche en nombre entier affiché sur l'écran de droite.",
+
+    "howToUseKey": "Comment utiliser?",
+    "howToUseDesc": "Utilisez l'écran de droite pour modifier directement le numéro qui s'y trouve. \n Appuyez sur le bouton valider en vert pour confirmer votre réponse."
+  },
+
+  "numToBinDialog": {
+    "goalKey": "Objectif",
+    "goalDesc": "Convertissez le numéro sur l'écran de gauche en code binaire affiché sur l'écran de droite.",
+
+    "howToUseKey": "Comment utiliser?",
+    "howToUseDesc": "Utilisez les boutons bleus pour créer différentes combinaisons binaires. \n Appuyez sur le bouton valider en vert pour confirmer votre réponse."
+  },
+
+  "watermark": {
+    "developedBy": "Développé par",
+    "code": "Code disponible sur"
+  }
 }

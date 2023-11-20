@@ -12,31 +12,21 @@ import {
 export class BinNumDialogComponent implements IDialogFn {
   getGuideContent(): IDialogContent {
     return {
-      title: 'Guide',
+      titleKey: 'guide',
     };
   }
 
   getGoalContent(): IDialogContent {
     return {
-      title: 'Goal',
-      description:
-        'Convert binary code on the left screen to number displayed on the right screen.',
+      titleKey: 'binToNumDialog.goalKey',
+      descriptionKey: 'binToNumDialog.goalDesc',
     };
   }
 
   getHowContent(): IDialogContent {
     return {
-      title: 'How to use?',
-      description:
-        'Use the right screen to directly edit the number on it.\n Press the validate button to confirm your answer.',
-    };
-  }
-
-  getNoteContent(): IDialogContent {
-    return {
-      title: 'Note',
-      description:
-        'When the answer is correct, a new binary code is generated. Then, a new round is automatically started after a few seconds.',
+      titleKey: 'binToNumDialog.howToUseKey',
+      descriptionKey: 'binToNumDialog.howToUseDesc',
     };
   }
 }

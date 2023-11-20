@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./watermark-item.component.scss'],
 })
 export class WatermarkItemComponent {
-  @Input() text!: string;
+  @Input() textKey!: string;
   @Input() linkURL!: string;
   @Input() linkText!: string;
   @Input() imgSrc!: string;

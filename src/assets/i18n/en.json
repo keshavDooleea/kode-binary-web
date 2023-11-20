@@ -1,4 +1,28 @@
 {
   "numberToBinary": "Number to Binary",
-  "binaryToNumber": "Binary to Number"
+  "binaryToNumber": "Binary to Number",
+  "numberToBinaryConversion": "Number to Binary conversion",
+  "binaryToNumberConversion": "Binary to Number conversion",
+  "guide": "Guide",
+
+  "binToNumDialog": {
+    "goalKey": "Goal",
+    "goalDesc": "Convert binary code on the left screen to number displayed on the right screen.",
+
+    "howToUse": "How to use?",
+    "howToUseDesc": "Use the right screen to directly edit the number on it.\n Press the green validation button to confirm your answer."
+  },
+
+  "numToBinDialog": {
+    "goalKey": "Goal",
+    "goalDesc": "Convert the number on the left screen to binary code displayed on the right screen.",
+
+    "howToUseKey": "How to use?",
+    "howToUseDesc": "Use the blue buttons to create different binary combinations.\n Press the green validation button to confirm your answer."
+  },
+
+  "watermark": {
+    "developedBy": "Developed by",
+    "code": "Code available on"
+  }
 }
