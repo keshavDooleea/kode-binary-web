@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { DialogService } from 'src/services/dialog/dialog.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { DialogService } from 'src/services/dialog/dialog.service';
   styleUrls: ['./dialog-layout.component.scss'],
 })
 export class DialogLayoutComponent {
+  @Input() subtitle!: string;
+
   constructor(private dialogService: DialogService) {}
 
   @HostListener('click', ['$event'])

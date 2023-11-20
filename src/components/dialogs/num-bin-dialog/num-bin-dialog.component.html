@@ -1,4 +1,4 @@
-<app-dialog-layout>
+<app-dialog-layout subtitle="Instructions">
   <span header>Number to Binary</span>
 
   <ng-container content>
@@ -15,5 +15,7 @@
     <app-dialog-content [dialogContent]="getGoalContent()"></app-dialog-content>
     <app-dialog-content [dialogContent]="getHowContent()"></app-dialog-content>
     <app-dialog-content [dialogContent]="getNoteContent()"></app-dialog-content>
+
+    <app-watermark></app-watermark>
   </ng-container>
 </app-dialog-layout>

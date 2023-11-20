@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
-export type DialogT = 'numToBin' | 'binToNum';
+export type DialogT = 'numToBin' | 'binToNum' | 'welcome';
 export type Dialog = Map<DialogT, boolean>;
 
 @Injectable({
@@ -34,6 +34,10 @@ export class DialogService {
 
   openBinNumDialog(): void {
     this.toggleTo('binToNum', true);
+  }
+
+  openWelcomeDialog(): void {
+    this.toggleTo('welcome', true);
   }
 
   listen(): Observable<Dialog> {
