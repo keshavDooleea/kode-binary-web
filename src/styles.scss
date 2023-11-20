@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kdam+Thmor+Pro&family=Orbitron:wght@500&display=swap&family=Poppins&display=swap");
+@import "variables.scss";
 
 * {
   margin: 0;
@@ -11,7 +12,6 @@
   --secBkgColor: #fff;
   --appTitleColor: #186f4b;
 
-  --navHeight: 70px;
   --padding: 20px;
   --gap: 10px;
   --radius: 5px;
@@ -111,4 +111,11 @@ body {
 .dialog-circuit-img {
   max-width: 95%;
   max-height: 75%;
+}
+
+@media screen and (max-width: $mobileViewPort) {
+  html {
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
 }

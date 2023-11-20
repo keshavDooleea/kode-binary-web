@@ -1,14 +1,20 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 nav {
   width: 100%;
-  height: var(--navHeight);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: calc(var(--padding) / 2) 0;
 }
 
 main {
   width: 100%;
-  height: calc(100vh - var(--navHeight));
+  flex: 1;
   padding: var(--padding);
   display: flex;
   flex-direction: column;

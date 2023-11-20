@@ -1,3 +1,5 @@
+@import "/src/variables.scss";
+
 :host {
   text-align: center;
   width: 70%;
@@ -17,4 +19,10 @@
 
 p {
   white-space: pre-line;
+}
+
+@media screen and (max-width: $mobileViewPort) {
+  :host {
+    width: 90%;
+  }
 }
