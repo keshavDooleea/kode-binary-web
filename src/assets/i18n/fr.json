@@ -1,3 +1,4 @@
 {
-  "numToBinary": "Nombre en Binaire"
+  "numberToBinary": "Nombre en Binaire",
+  "binaryToNumber": "Binaire en Nombre"
 }

@@ -1,16 +1,17 @@
 <h2>{{ appTitle }}</h2>
 
 <div class="navbar-items">
-  <a
-    [ngClass]="{ active: !isBinToNum }"
-    [routerLink]="['/']"
+  <app-nav-item
+    [isActive]="!isBinToNum"
+    [routerLinks]="['/']"
     [queryParams]="{}"
-    >{{ "numToBinary" | translate }}</a
-  >
-  <a
-    [ngClass]="{ active: isBinToNum }"
-    [routerLink]="['/']"
+    i18nKey="numberToBinary"
+  ></app-nav-item>
+
+  <app-nav-item
+    [isActive]="isBinToNum"
+    [routerLinks]="['/']"
     [queryParams]="{ type: binToNbQueryParam }"
-    >Binary to Number</a
-  >
+    i18nKey="binaryToNumber"
+  ></app-nav-item>
 </div>
