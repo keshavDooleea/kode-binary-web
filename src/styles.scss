@@ -127,6 +127,10 @@ body {
   max-height: 75%;
 }
 
+.center-text {
+  text-align: center;
+}
+
 @media screen and (max-width: $mobileViewPort) {
   html {
     overflow: hidden;

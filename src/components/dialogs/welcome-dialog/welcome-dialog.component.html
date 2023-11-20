@@ -1,11 +1,32 @@
-<app-dialog-layout>
-  <span header>Welcome</span>
+<app-dialog-layout subtitle="Welcome to KodeBinary, a Binary converter app!">
+  <span header>🎉 Hello there 🎉</span>
 
   <ng-container content>
-    <p class="poppins">This is</p>
+    <div class="poppins content-text">
+      <p class="center-text">
+        Whether you're a coding enthusiast or just exploring the world of
+        binary, you're in the right place!
+      </p>
 
-    <div class="poppins checkbox-parent-container">
-      <div class="checkbox-container">
+      <p>
+        🔢 <b>Binary to Decimal</b>: Convert binary numbers to their decimal
+        equivalents.
+      </p>
+
+      <p>
+        🔄 <b>Decimal to Binary</b>: Switch it up and convert decimal numbers to
+        binary.
+      </p>
+
+      <p class="center-text">
+        <i>Ready to dive in?</i> <br />
+        Use the simple and intuitive interfaces to make your conversions with
+        ease.
+      </p>
+    </div>
+
+    <div class="checkbox-container">
+      <small class="poppins">
         <input
           type="checkbox"
           id="welcome-dialog-checkbox"
@@ -14,13 +35,7 @@
         <label for="welcome-dialog-checkbox"
           >Do not show this popup again</label
         >
-      </div>
-      <button
-        (click)="savePref()"
-        [ngClass]="{ disabled: !isWelcomeInputChecked }"
-      >
-        Save preference and close
-      </button>
+      </small>
     </div>
   </ng-container>
 </app-dialog-layout>

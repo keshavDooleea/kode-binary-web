@@ -9,7 +9,7 @@
     "goalKey": "Goal",
     "goalDesc": "Convert binary code on the left screen to number displayed on the right screen.",
 
-    "howToUse": "How to use?",
+    "howToUseKey": "How to use?",
     "howToUseDesc": "Use the right screen to directly edit the number on it.\n Press the green validation button to confirm your answer."
   },
 
