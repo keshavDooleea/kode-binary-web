@@ -6,9 +6,18 @@ small {
     text-decoration: underline;
     display: flex;
     margin-left: 5px;
+    color: #000;
+
+    span {
+      transition: 0.2s opacity;
+    }
 
     &:hover {
       text-decoration: none;
+
+      span {
+        opacity: 0.7;
+      }
     }
   }
 

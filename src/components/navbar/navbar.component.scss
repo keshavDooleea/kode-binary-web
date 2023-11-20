@@ -21,10 +21,32 @@
     a {
       opacity: 0.6;
       cursor: pointer;
+      color: #000000;
+      z-index: 1;
+
+      &:hover {
+        opacity: 0.8;
+      }
 
       &.active {
         opacity: 1;
+        background-color: var(--bkgColor);
+        position: relative;
         font-weight: bold;
+
+        &::before {
+          content: "";
+          width: 110%;
+          height: 120%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: var(--radius);
+          background-color: #ecf0f3;
+          z-index: -1;
+          border: 1px solid #ddd;
+        }
       }
     }
   }
@@ -33,6 +55,15 @@
 @media screen and (max-width: $mobileViewPort) {
   :host {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+    padding-bottom: 12px;
+
+    .navbar-items {
+      gap: calc(var(--gap) * 4);
+
+      a {
+        opacity: 1;
+      }
+    }
   }
 }
