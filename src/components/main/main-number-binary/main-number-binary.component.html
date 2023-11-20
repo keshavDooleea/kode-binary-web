@@ -2,4 +2,5 @@
   *ngIf="currentByte"
   [ngClass]="{ lock: lockComponent }"
   (byteEmitter)="onCircuitButtonClicked($event)"
+  (validateBtnEmitter)="onValidateClicked()"
 ></app-circuit-num-to-bin>

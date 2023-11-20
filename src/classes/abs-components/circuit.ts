@@ -7,7 +7,7 @@ import { TranslationService } from 'src/services/translation/translation.service
 import { circuit } from 'src/utils/constants';
 import { hideElement, showElement } from 'src/utils/functions';
 
-export abstract class Circuit {
+export abstract class AbsCircuit {
   private ledService: LedsService;
   private lcdService: LcdService;
   private soundService: SoundService;
@@ -37,6 +37,7 @@ export abstract class Circuit {
     this.addButtonClass(this.hideWiresButton);
     this.addButtonClass(this.engLangButton);
     this.addButtonClass(this.frLangButton);
+    this.addButtonClass(this.validateButton);
   }
 
   destroy(): void {
@@ -75,6 +76,10 @@ export abstract class Circuit {
     return document.querySelector(`#${circuit.HELP_BUTTON}`) as HTMLElement;
   }
 
+  get validateButton(): HTMLElement {
+    return document.querySelector(`#${circuit.VALIDATE_BUTTON}`) as HTMLElement;
+  }
+
   addButtonClass(button: Element): void {
     button.classList.add('circuit-btn');
   }
@@ -90,6 +95,11 @@ export abstract class Circuit {
     this.helpButton.addEventListener('click', () => {
       this.playButtonSound();
       this.onHelpButtonClicked();
+    });
+
+    this.validateButton.addEventListener('click', () => {
+      this.playButtonSound();
+      this.onValidateButtonClicked();
     });
 
     this.addLangListener(this.engLangButton, () =>
@@ -115,6 +125,7 @@ export abstract class Circuit {
   }
 
   abstract onHelpButtonClicked(): void;
+  abstract onValidateButtonClicked(): void;
 
   toggleElementsOnCircuit(shouldShow: boolean): void {
     const toggle = (selector: string): void => {

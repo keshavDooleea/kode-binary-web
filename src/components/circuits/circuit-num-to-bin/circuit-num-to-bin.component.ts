@@ -5,7 +5,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { Circuit } from 'src/classes/circuit-component/circuit';
+import { AbsCircuit } from 'src/classes/abs-components/circuit';
 import { DialogService } from 'src/services/dialog/dialog.service';
 import { circuit } from 'src/utils/constants';
 import { getByteFromText } from 'src/utils/functions';
@@ -16,10 +16,11 @@ import { getByteFromText } from 'src/utils/functions';
   styleUrls: ['./circuit-num-to-bin.component.scss'],
 })
 export class CircuitNumToBinComponent
-  extends Circuit
+  extends AbsCircuit
   implements OnInit, OnDestroy
 {
   @Output() byteEmitter: EventEmitter<number> = new EventEmitter();
+  @Output() validateBtnEmitter: EventEmitter<void> = new EventEmitter();
 
   constructor(private dialogService: DialogService) {
     super();
@@ -35,8 +36,12 @@ export class CircuitNumToBinComponent
     super.destroy();
   }
 
-  onHelpButtonClicked(): void {
+  override onHelpButtonClicked(): void {
     this.dialogService.openNumBinDialog();
+  }
+
+  override onValidateButtonClicked(): void {
+    this.validateBtnEmitter.emit();
   }
 
   private addClickListeners(): void {

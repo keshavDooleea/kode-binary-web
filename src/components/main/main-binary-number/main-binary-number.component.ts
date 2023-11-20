@@ -1,25 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Confetti } from 'src/classes/confetti/confetti';
-import { ByteService } from 'src/services/byte/byte.service';
-import { LcdService } from 'src/services/lcd/lcd.service';
-import { LedsService } from 'src/services/leds/leds.service';
-import { SoundService } from 'src/services/sound/sound.service';
+import { AbsMain } from 'src/classes/abs-components/main';
 
 @Component({
   selector: 'app-main-binary-number',
   templateUrl: './main-binary-number.component.html',
   styleUrls: ['./main-binary-number.component.scss'],
 })
-export class MainBinaryNumberComponent implements OnInit {
-  lockComponent = false;
-
-  constructor(
-    private byteService: ByteService,
-    private ledService: LedsService,
-    private lcdService: LcdService,
-    private soundService: SoundService
-  ) {}
-
+export class MainBinaryNumberComponent extends AbsMain implements OnInit {
   ngOnInit(): void {
     this.adjustInputElement();
     this.generateNewByte();
@@ -50,7 +37,7 @@ export class MainBinaryNumberComponent implements OnInit {
     this.numInput.focus();
   }
 
-  private generateNewByte(): void {
+  override generateNewByte(): void {
     this.byteService.setNewByte(false);
     this.ledService.turnOnLEDs();
     this.lockComponent = false;
@@ -58,27 +45,8 @@ export class MainBinaryNumberComponent implements OnInit {
     setTimeout(() => this.lcdService.updateBinaryCode());
   }
 
-  async onValidateClicked(): Promise<void> {
-    this.soundService.playButton();
-    this.lockComponent = true;
-
+  isMatch(): boolean {
     const numValue = this.numInput.value;
-    const isMatch = this.byteService.currentByte === +numValue;
-
-    if (!isMatch) {
-      this.lcdService.writeError();
-      this.soundService.playError();
-      await this.ledService.blinkError();
-      this.lcdService.updateBinaryCode();
-      this.ledService.setPowerOn();
-      this.lockComponent = false;
-      return;
-    }
-
-    Confetti.throwRandom();
-    this.lcdService.writeSuccess();
-    this.soundService.playSuccess();
-    await this.ledService.blinkPower();
-    setTimeout(() => this.generateNewByte(), 2000);
+    return this.byteService.currentByte === +numValue;
   }
 }

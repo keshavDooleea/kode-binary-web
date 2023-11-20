@@ -1,13 +1,12 @@
 import {
   Component,
-  EventEmitter,
   OnDestroy,
   OnInit,
   Output,
+  EventEmitter,
 } from '@angular/core';
-import { Circuit } from 'src/classes/circuit-component/circuit';
+import { AbsCircuit } from 'src/classes/abs-components/circuit';
 import { DialogService } from 'src/services/dialog/dialog.service';
-import { circuit } from 'src/utils/constants';
 
 @Component({
   selector: 'app-circuit-bin-to-num',
@@ -15,10 +14,10 @@ import { circuit } from 'src/utils/constants';
   styleUrls: ['./circuit-bin-to-num.component.scss'],
 })
 export class CircuitBinToNumComponent
-  extends Circuit
+  extends AbsCircuit
   implements OnDestroy, OnInit
 {
-  @Output() numEmitter: EventEmitter<void> = new EventEmitter();
+  @Output() validateBtnEmitter: EventEmitter<void> = new EventEmitter();
 
   constructor(private dialogService: DialogService) {
     super();
@@ -26,7 +25,6 @@ export class CircuitBinToNumComponent
 
   ngOnInit(): void {
     super.init();
-    this.addClickListeners();
     this.addCommonListeners();
   }
 
@@ -34,13 +32,11 @@ export class CircuitBinToNumComponent
     super.destroy();
   }
 
-  onHelpButtonClicked(): void {
+  override onHelpButtonClicked(): void {
     this.dialogService.openBinNumDialog();
   }
 
-  private addClickListeners(): void {
-    const validateBtn = document.querySelector(`#${circuit.VALIDATE_BUTTON}`)!;
-    this.addButtonClass(validateBtn);
-    validateBtn.addEventListener('click', () => this.numEmitter.emit());
+  override onValidateButtonClicked(): void {
+    this.validateBtnEmitter.emit();
   }
 }
