@@ -72,6 +72,7 @@ body {
   font-family: "Kdam Thmor Pro", sans-serif;
 }
 
+#language,
 .poppins {
   font-family: "Poppins", sans-serif;
 }
@@ -85,14 +86,19 @@ body {
     #btn-circle-8,
     #btn-circle-4,
     #btn-circle-2,
-    #btn-circle-1,
-    #btn-circle-validate path {
+    #btn-circle-1 {
       fill: #2016c2;
+    }
+
+    #btn-circle-validate path {
+      fill: #186f4b;
     }
 
     #btn-circle-question path,
     #btn-circle-show-wires path,
-    #btn-circle-hide-wires path {
+    #btn-circle-hide-wires path,
+    #btn-eng-circle path,
+    #btn-fr-circle path {
       fill: #d1d116;
     }
   }
@@ -107,7 +113,9 @@ body {
     #btn-circle-validate,
     #btn-circle-question,
     #btn-circle-show-wires,
-    #btn-circle-hide-wires {
+    #btn-circle-hide-wires,
+    #btn-eng-circle,
+    #btn-fr-circle {
       opacity: 0.1;
     }
   }

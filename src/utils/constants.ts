@@ -11,6 +11,8 @@ export const circuit = {
   HELP_BUTTON: 'question_btn',
   SHOW_WIRES_BUTTON: 'show_wires',
   HIDE_WIRES_BUTTON: 'hide_wires',
+  ENG_LANG_BUTTON: 'eng_language_btn',
+  FR_LANG_BUTTON: 'fr_language_btn',
 };
 
 export const led = {
@@ -29,4 +31,5 @@ export const lcd = {
   NUM_DISPLAY: 'screen_num',
   BIN_LCD: 'lcd_bin',
   BIN_DISPLAY: 'screen_bin',
+  LANG: 'language',
 };

@@ -1,6 +1,7 @@
 import { inject } from '@angular/core';
 import { LcdService } from 'src/services/lcd/lcd.service';
 import { LedsService } from 'src/services/leds/leds.service';
+import { LocalStorageService } from 'src/services/local-storage/local-storage.service';
 import { SoundService } from 'src/services/sound/sound.service';
 import { circuit } from 'src/utils/constants';
 import { hideElement, showElement } from 'src/utils/functions';
@@ -9,11 +10,13 @@ export abstract class Circuit {
   private ledService: LedsService;
   private lcdService: LcdService;
   private soundService: SoundService;
+  private localStorageService: LocalStorageService;
 
   constructor() {
     this.ledService = inject(LedsService);
     this.lcdService = inject(LcdService);
     this.soundService = inject(SoundService);
+    this.localStorageService = inject(LocalStorageService);
   }
 
   init(): void {
@@ -21,16 +24,26 @@ export abstract class Circuit {
     this.ledService.blinkPowerLEDs();
     this.lcdService.writeZeros();
     this.lcdService.writeNum(0);
+    this.lcdService.updateLanguage();
 
     hideElement(this.showWiresButton);
+    this.toggleLangButtons();
 
     this.addButtonClass(this.helpButton);
     this.addButtonClass(this.showWiresButton);
     this.addButtonClass(this.hideWiresButton);
+    this.addButtonClass(this.engLangButton);
+    this.addButtonClass(this.frLangButton);
   }
 
   destroy(): void {
     this.ledService.onDestroy();
+  }
+
+  private toggleLangButtons(): void {
+    const isEngLang = this.localStorageService.languageStorage.isEngLang();
+    hideElement(isEngLang ? this.engLangButton : this.frLangButton);
+    showElement(isEngLang ? this.frLangButton : this.engLangButton);
   }
 
   get showWiresButton(): HTMLElement {
@@ -43,6 +56,14 @@ export abstract class Circuit {
     return document.querySelector(
       `#${circuit.HIDE_WIRES_BUTTON}`
     ) as HTMLElement;
+  }
+
+  get engLangButton(): HTMLElement {
+    return document.querySelector(`#${circuit.ENG_LANG_BUTTON}`) as HTMLElement;
+  }
+
+  get frLangButton(): HTMLElement {
+    return document.querySelector(`#${circuit.FR_LANG_BUTTON}`) as HTMLElement;
   }
 
   get helpButton(): HTMLElement {
@@ -64,6 +85,23 @@ export abstract class Circuit {
     this.helpButton.addEventListener('click', () => {
       this.playButtonSound();
       this.onHelpButtonClicked();
+    });
+
+    this.addLangListener(this.engLangButton, () =>
+      this.localStorageService.languageStorage.setToEnglish()
+    );
+
+    this.addLangListener(this.frLangButton, () =>
+      this.localStorageService.languageStorage.setToFrench()
+    );
+  }
+
+  private addLangListener(langButton: HTMLElement, cb: () => void): void {
+    langButton.addEventListener('click', () => {
+      this.playButtonSound();
+      cb();
+      this.toggleLangButtons();
+      this.lcdService.updateLanguage();
     });
   }
 
