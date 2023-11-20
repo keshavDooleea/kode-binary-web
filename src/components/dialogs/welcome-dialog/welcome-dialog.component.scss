@@ -1,0 +1,28 @@
+.checkbox-parent-container {
+  background-color: #ecf0f3;
+  padding: var(--padding);
+  border-radius: var(--radius);
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input,
+    label {
+      cursor: pointer;
+    }
+
+    input {
+      margin-right: 6px;
+      width: 15px;
+      height: 15px;
+    }
+  }
+}

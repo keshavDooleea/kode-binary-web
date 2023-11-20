@@ -3,5 +3,24 @@
 
   <ng-container content>
     <p class="poppins">This is</p>
+
+    <div class="poppins checkbox-parent-container">
+      <div class="checkbox-container">
+        <input
+          type="checkbox"
+          id="welcome-dialog-checkbox"
+          #welcomeDialogInput
+        />
+        <label for="welcome-dialog-checkbox"
+          >Do not show this popup again</label
+        >
+      </div>
+      <button
+        (click)="savePref()"
+        [ngClass]="{ disabled: !isWelcomeInputChecked }"
+      >
+        Save preference and close
+      </button>
+    </div>
   </ng-container>
 </app-dialog-layout>

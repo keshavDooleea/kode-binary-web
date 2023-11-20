@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Dialog, DialogService } from 'src/services/dialog/dialog.service';
+import { LocalStorageService } from 'src/services/local-storage/local-storage.service';
 
 @Component({
   selector: 'app-main-dialogs',
@@ -11,7 +12,10 @@ export class MainDialogsComponent implements OnInit, OnDestroy {
   dialogMap: Dialog;
   subscription: Subscription;
 
-  constructor(private dialogService: DialogService) {
+  constructor(
+    private dialogService: DialogService,
+    private localStorageService: LocalStorageService
+  ) {
     this.dialogMap = new Map();
     this.subscription = new Subscription();
 
@@ -33,8 +37,12 @@ export class MainDialogsComponent implements OnInit, OnDestroy {
   }
 
   private openWelcomeDialog(): void {
-    // check local storage
-    this.dialogService.openWelcomeDialog();
+    const hideDialog =
+      this.localStorageService.welcomeDialogStorage.getFromStorage();
+
+    if (!hideDialog) {
+      this.dialogService.openWelcomeDialog();
+    }
   }
 
   get isNumToBinOpen(): boolean {

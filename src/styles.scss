@@ -37,6 +37,11 @@ button {
     filter: brightness(90%);
     outline: 1px solid #ccc;
   }
+
+  &.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
 }
 
 a {
