@@ -17,6 +17,7 @@ import { WatermarkComponent } from '../components/watermarks/watermark/watermark
 import { WatermarkItemComponent } from '../components/watermarks/watermark-item/watermark-item.component';
 import { DialogContentComponent } from '../components/dialogs/dialog-content/dialog-content.component';
 import { WelcomeDialogComponent } from '../components/dialogs/welcome-dialog/welcome-dialog.component';
+import { TranslationModule } from 'src/modules/translation.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { WelcomeDialogComponent } from '../components/dialogs/welcome-dialog/wel
     DialogContentComponent,
     WelcomeDialogComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot([])],
+  imports: [BrowserModule, RouterModule.forRoot([]), ...TranslationModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -3,6 +3,7 @@ import { LcdService } from 'src/services/lcd/lcd.service';
 import { LedsService } from 'src/services/leds/leds.service';
 import { LocalStorageService } from 'src/services/local-storage/local-storage.service';
 import { SoundService } from 'src/services/sound/sound.service';
+import { TranslationService } from 'src/services/translation/translation.service';
 import { circuit } from 'src/utils/constants';
 import { hideElement, showElement } from 'src/utils/functions';
 
@@ -11,12 +12,14 @@ export abstract class Circuit {
   private lcdService: LcdService;
   private soundService: SoundService;
   private localStorageService: LocalStorageService;
+  private translationService: TranslationService;
 
   constructor() {
     this.ledService = inject(LedsService);
     this.lcdService = inject(LcdService);
     this.soundService = inject(SoundService);
     this.localStorageService = inject(LocalStorageService);
+    this.translationService = inject(TranslationService);
   }
 
   init(): void {
@@ -44,6 +47,8 @@ export abstract class Circuit {
     const isEngLang = this.localStorageService.languageStorage.isEngLang();
     hideElement(isEngLang ? this.engLangButton : this.frLangButton);
     showElement(isEngLang ? this.frLangButton : this.engLangButton);
+
+    this.translationService.updateLanguage();
   }
 
   get showWiresButton(): HTMLElement {
