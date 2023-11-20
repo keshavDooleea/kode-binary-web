@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ByteService } from '../byte/byte.service';
 import { lcd } from 'src/utils/constants';
 import { LocalStorageService } from '../local-storage/local-storage.service';
+import { delay } from 'src/utils/functions';
 
 @Injectable({
   providedIn: 'root',
@@ -66,5 +67,25 @@ export class LcdService {
 
     this.languageElement.textContent =
       this.localStorageService.languageStorage.getLanguage();
+  }
+
+  async updateAndBlinkLanguage(): Promise<void> {
+    if (!this.languageElement) return;
+
+    this.languageElement.textContent = '';
+    const delayMs = 300;
+
+    const fullLanguage =
+      this.localStorageService.languageStorage.getFullLanguage();
+
+    for (let i = 0; i < 3; i++) {
+      this.writeBin(fullLanguage);
+      await delay(delayMs);
+      this.writeBin('');
+      await delay(delayMs);
+    }
+
+    this.updateLanguage();
+    this.updateBinaryCode();
   }
 }

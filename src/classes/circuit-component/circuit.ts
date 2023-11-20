@@ -101,7 +101,7 @@ export abstract class Circuit {
       this.playButtonSound();
       cb();
       this.toggleLangButtons();
-      this.lcdService.updateLanguage();
+      this.lcdService.updateAndBlinkLanguage();
     });
   }
 

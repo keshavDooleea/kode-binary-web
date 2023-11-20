@@ -17,6 +17,15 @@ export class LanguageStorage extends AbsLocalStorage<ELanguage> {
     return lang ?? this.defaultLang;
   }
 
+  getFullLanguage(): string {
+    switch (this.getLanguage()) {
+      case ELanguage.eng:
+        return 'English';
+      case ELanguage.fr:
+        return 'Français';
+    }
+  }
+
   isEngLang(): boolean {
     return this.getLanguage() === ELanguage.eng;
   }
