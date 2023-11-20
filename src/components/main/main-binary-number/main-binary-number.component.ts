@@ -39,13 +39,15 @@ export class MainBinaryNumberComponent implements OnInit {
 
     if (!lcdBoundingRect || !this.numInput) return;
 
-    this.numInput.value = `0`;
+    // this.numInput.value = `0`;
 
     this.numInput.style.left = `${lcdBoundingRect?.left}px`;
     this.numInput.style.top = `${lcdBoundingRect?.top}px`;
-    this.numInput.style.width = `${lcdBoundingRect?.width * 2}px`;
+    this.numInput.style.width = `${lcdBoundingRect?.width}px`;
     this.numInput.style.height = `${lcdBoundingRect?.height}px`;
     this.numInput.style.fontSize = `${lcdBoundingRect?.height * 0.9}px`;
+
+    this.numInput.focus();
   }
 
   private generateNewByte(): void {
