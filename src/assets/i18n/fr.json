@@ -16,7 +16,7 @@
 
   "numToBinDialog": {
     "goalKey": "Objectif",
-    "goalDesc": "Convertissez le numéro sur l'écran de gauche en code binaire affiché sur l'écran de droite.",
+    "goalDesc": "Convertir le numéro sur l'écran de gauche en code binaire affiché sur l'écran de droite.",
 
     "howToUseKey": "Comment utiliser?",
     "howToUseDesc": "Utilisez les boutons bleus pour créer différentes combinaisons binaires. \n Appuyez sur le bouton valider en vert pour confirmer votre réponse."
