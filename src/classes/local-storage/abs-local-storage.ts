@@ -12,7 +12,7 @@ export class AbsLocalStorage<T> {
     this.key = `${APP_TITLE}-${subkey}`;
   }
 
-  protected setToStorage(value: T): void {
+  setToStorage(value: T): void {
     localStorage.setItem(this.key, JSON.stringify(value));
   }
 

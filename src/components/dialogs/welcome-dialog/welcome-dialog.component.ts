@@ -1,5 +1,4 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { DialogService } from 'src/services/dialog/dialog.service';
 import { LocalStorageService } from 'src/services/local-storage/local-storage.service';
 
 @Component({
@@ -10,19 +9,10 @@ import { LocalStorageService } from 'src/services/local-storage/local-storage.se
 export class WelcomeDialogComponent {
   @ViewChild('welcomeDialogInput') welcomeDialogInput!: ElementRef;
 
-  constructor(
-    private localStorageService: LocalStorageService,
-    private dialogService: DialogService
-  ) {}
+  constructor(private localStorageService: LocalStorageService) {}
 
-  get isWelcomeInputChecked(): boolean {
-    return this.welcomeDialogInput?.nativeElement?.checked ?? false;
-  }
-
-  savePref(): void {
-    if (!this.isWelcomeInputChecked) return;
-
-    this.localStorageService.welcomeDialogStorage.hideDialog();
-    this.dialogService.closeAll();
+  onPopupInputChange(event: Event): void {
+    const isChecked = (event.target as HTMLInputElement).checked;
+    this.localStorageService.welcomeDialogStorage.setToStorage(isChecked);
   }
 }

@@ -30,6 +30,7 @@
         <input
           type="checkbox"
           id="welcome-dialog-checkbox"
+          (change)="onPopupInputChange($event)"
           #welcomeDialogInput
         />
         <label for="welcome-dialog-checkbox"
