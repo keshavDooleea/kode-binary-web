@@ -1,4 +1,6 @@
-.checkbox-container {
+@import "/src/variables.scss";
+
+.popup-container {
   margin: 40px var(--padding) 10px 0;
   align-self: flex-end;
 
@@ -53,6 +55,38 @@
     &:nth-child(3) {
       margin-top: 10px;
       margin-bottom: 40px;
+    }
+  }
+}
+
+.circuit-assets {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+
+  img,
+  video {
+    border-radius: var(--radius);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+
+  img {
+    max-width: 95%;
+    max-height: 60vh;
+  }
+}
+
+@media screen and (max-width: $mobileViewPort) {
+  .popup-container {
+    margin: 40px var(--padding) 10px var(--padding);
+
+    small {
+      input {
+        margin-right: 12px;
+        width: 25px;
+        height: 25px;
+      }
     }
   }
 }
