@@ -3,7 +3,9 @@
   "binaryToNumber": "Binary to Number",
   "numberToBinaryConversion": "Number to Binary conversion",
   "binaryToNumberConversion": "Binary to Number conversion",
+
   "guide": "Guide",
+  "close": "Close",
 
   "binToNumDialog": {
     "goalKey": "Goal",
@@ -19,6 +21,18 @@
 
     "howToUseKey": "How to use?",
     "howToUseDesc": "Use the blue buttons to create different binary combinations.\n Press the green validation button to confirm your answer."
+  },
+
+  "welcomeDialog": {
+    "header": "Hello there",
+    "welcomeLeft": "Welcome to",
+    "welcomeRight": ", a Binary converter app!",
+    "intro": "Whether you're a coding enthusiast or just exploring the world of binary, you're in the right place!",
+    "binaryToNumber": "Convert binary code to their equivalent number.",
+    "numberToBinary": "Switch it up and convert numbers to binary code.",
+    "diveIn": "Ready to dive in?",
+    "instruction": "Use the simple and intuitive interfaces to make your conversions with ease.",
+    "popup": "Do not show this popup again"
   },
 
   "watermark": {

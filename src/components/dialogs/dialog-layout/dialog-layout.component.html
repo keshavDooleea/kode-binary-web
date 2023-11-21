@@ -1,6 +1,8 @@
 <div class="modal">
   <div class="modal-body">
-    <button class="close-btn" (click)="close()">Close</button>
+    <button class="close-btn" (click)="close()">
+      {{ "close" | translate }}
+    </button>
     <div class="header">
       <h3><ng-content select="[header]"></ng-content></h3>
       <h5 *ngIf="subtitle">{{ subtitle }}</h5>

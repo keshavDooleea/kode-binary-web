@@ -1,27 +1,29 @@
-<app-dialog-layout subtitle="Welcome to KodeBinary, a Binary converter app!">
-  <span header>🎉 Hello there 🎉</span>
+<app-dialog-layout>
+  <span header>🎉 {{ "welcomeDialog.header" | translate }} 🎉</span>
 
   <ng-container content>
+    <h4 class="welcome-title">
+      <span>{{ "welcomeDialog.welcomeLeft" | translate }} </span>
+      <span class="app-title">{{ appTitle }}</span>
+      <span>{{ "welcomeDialog.welcomeRight" | translate }} </span>
+    </h4>
+
     <div class="poppins content-text">
-      <p class="center-text">
-        Whether you're a coding enthusiast or just exploring the world of
-        binary, you're in the right place!
+      <p class="center-text">{{ "welcomeDialog.intro" | translate }}</p>
+
+      <p>
+        🔢 <b>{{ "binaryToNumber" | translate }}</b
+        >: {{ "welcomeDialog.binaryToNumber" | translate }}
       </p>
 
       <p>
-        🔢 <b>Binary to Number</b>: Convert binary code to their equivalent
-        number.
-      </p>
-
-      <p>
-        🔄 <b>Number to Binary</b>: Switch it up and convert numbers to binary
-        code.
+        🔄 <b>{{ "numberToBinary" | translate }}</b
+        >: {{ "welcomeDialog.numberToBinary" | translate }}
       </p>
 
       <p class="center-text">
-        <i>Ready to dive in?</i> <br />
-        Use the simple and intuitive interfaces to make your conversions with
-        ease.
+        <i>{{ "welcomeDialog.diveIn" | translate }}</i> <br />
+        {{ "welcomeDialog.instruction" | translate }}
       </p>
     </div>
 
@@ -33,9 +35,9 @@
           (change)="onPopupInputChange($event)"
           #welcomeDialogInput
         />
-        <label for="welcome-dialog-checkbox"
-          >Do not show this popup again</label
-        >
+        <label for="welcome-dialog-checkbox">{{
+          "welcomeDialog.popup" | translate
+        }}</label>
       </small>
     </div>
   </ng-container>

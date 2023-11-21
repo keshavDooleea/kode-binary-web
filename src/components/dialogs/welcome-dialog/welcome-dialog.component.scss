@@ -20,6 +20,20 @@
   }
 }
 
+.welcome-title {
+  margin-bottom: 20px;
+
+  span {
+    &:not(.app-title) {
+      opacity: 0.8;
+    }
+
+    &.app-title {
+      color: var(--appTitleColor);
+    }
+  }
+}
+
 .content-text {
   text-align: left;
   padding: 0 var(--padding);

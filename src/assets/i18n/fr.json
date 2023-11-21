@@ -5,6 +5,7 @@
   "binaryToNumberConversion": "Conversion de Binaire en Nombre",
 
   "guide": "Guide",
+  "close": "Fermer",
 
   "binToNumDialog": {
     "goalKey": "Objectif",
@@ -20,6 +21,18 @@
 
     "howToUseKey": "Comment utiliser?",
     "howToUseDesc": "Utilisez les boutons bleus pour créer différentes combinaisons binaires. \n Appuyez sur le bouton valider en vert pour confirmer votre réponse."
+  },
+
+  "welcomeDialog": {
+    "header": "Bonjour",
+    "welcomeLeft": "Bienvenue sur",
+    "welcomeRight": ", une application de conversion binaire!",
+    "intro": "Que vous soyez un passionné de codage ou simplement en train d'explorer le monde du binaire, vous êtes au bon endroit!",
+    "binaryToNumber": "Convertissez les codes binaires en leurs équivalents nombres.",
+    "numberToBinary": "Alternez et convertissez les nombres entiers en code binaire.",
+    "diveIn": "Prêt à se lancer?",
+    "instruction": "Utilisez les interfaces simples et intuitives pour effectuer vos conversions en toute simplicité.",
+    "popup": "Ne pas afficher cette fenêtre à nouveau"
   },
 
   "watermark": {
