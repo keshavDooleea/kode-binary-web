@@ -29,6 +29,14 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
 }
 
 .header {
@@ -52,6 +60,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.close-btn,
+.header,
+.content {
+  z-index: 2;
 }
 
 @media screen and (max-width: $mobileViewPort) {
