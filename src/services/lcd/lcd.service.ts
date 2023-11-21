@@ -45,7 +45,11 @@ export class LcdService {
   }
 
   writeError(): void {
-    this.writeBin('Error');
+    const error = this.localStorageService.languageStorage.isEngLang()
+      ? 'Error'
+      : 'Erreur';
+
+    this.writeBin(error);
   }
 
   writeSuccess(): void {
