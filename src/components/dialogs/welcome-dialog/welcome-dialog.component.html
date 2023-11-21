@@ -11,15 +11,19 @@
     <div class="poppins content-text">
       <p class="center-text">{{ "welcomeDialog.intro" | translate }}</p>
 
-      <p>
-        <b>{{ "numberToBinary" | translate }}</b> (🔢➜🔟):
-        {{ "welcomeDialog.numberToBinary" | translate }}
-      </p>
+      <div class="num-bin-texts">
+        <p>
+          <b>{{ "numberToBinary" | translate }}</b>
+          <br />
+          🔢➜🔟: <span>{{ "welcomeDialog.numberToBinary" | translate }}</span>
+        </p>
 
-      <p>
-        <b>{{ "binaryToNumber" | translate }}</b> (🔟➜🔢):
-        {{ "welcomeDialog.binaryToNumber" | translate }}
-      </p>
+        <p>
+          <b>{{ "binaryToNumber" | translate }}</b>
+          <br />
+          🔟➜🔢: <span>{{ "welcomeDialog.binaryToNumber" | translate }}</span>
+        </p>
+      </div>
 
       <p class="center-text">
         <i>{{ "welcomeDialog.diveIn" | translate }}</i> <br />
