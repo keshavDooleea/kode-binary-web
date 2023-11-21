@@ -28,8 +28,8 @@
     "welcomeLeft": "Welcome to",
     "welcomeRight": ", a Binary converter app!",
     "intro": "Whether you're a coding enthusiast or just exploring the world of binary, you're in the right place!",
-    "binaryToNumber": "Convert binary code to their equivalent number.",
-    "numberToBinary": "Switch it up and convert numbers to binary code.",
+    "numberToBinary": "Convert numbers to binary codes.",
+    "binaryToNumber": "Switch it up and convert binary codes to their equivalent numbers.",
     "diveIn": "Ready to dive in?",
     "instruction": "Use the simple and intuitive interfaces to make your conversions with ease.",
     "popup": "Do not show this popup again next time"
