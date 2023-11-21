@@ -57,6 +57,6 @@
 @media screen and (max-width: $mobileViewPort) {
   .modal-body {
     width: 85%;
-    height: 90%;
+    max-height: 90%;
   }
 }
