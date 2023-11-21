@@ -4,6 +4,7 @@ export interface IDialogContent {
 }
 
 export interface IDialogFn {
+  getImgSrc(): string;
   getGuideContent(): IDialogContent;
   getGoalContent(): IDialogContent;
   getHowContent(): IDialogContent;

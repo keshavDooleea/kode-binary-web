@@ -1,8 +1,8 @@
 {
   "numberToBinary": "Number to Binary",
   "binaryToNumber": "Binary to Number",
-  "numberToBinaryConversion": "Number to Binary conversion",
-  "binaryToNumberConversion": "Binary to Number conversion",
+  "numberToBinaryConversion": "Number to Binary Code conversion",
+  "binaryToNumberConversion": "Binary Code to Number conversion",
 
   "guide": "Guide",
   "close": "Close",
