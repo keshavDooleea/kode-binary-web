@@ -3,4 +3,11 @@
   (validateBtnEmitter)="onValidateClicked()"
 ></app-circuit-bin-to-num>
 
-<input type="number" id="num-input" class="num-font" min="1" max="99" />
+<input
+  type="number"
+  id="num-input"
+  class="num-font"
+  min="1"
+  max="99"
+  (keyup.enter)="onValidateClicked()"
+/>

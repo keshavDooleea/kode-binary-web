@@ -26,14 +26,17 @@ export class MainBinaryNumberComponent extends AbsMain implements OnInit {
 
     if (!lcdBoundingRect || !this.numInput) return;
 
-    // this.numInput.value = `0`;
-
     this.numInput.style.left = `${lcdBoundingRect?.left}px`;
     this.numInput.style.top = `${lcdBoundingRect?.top}px`;
     this.numInput.style.width = `${lcdBoundingRect?.width}px`;
     this.numInput.style.height = `${lcdBoundingRect?.height}px`;
     this.numInput.style.fontSize = `${lcdBoundingRect?.height * 0.9}px`;
 
+    this.resetInputValue();
+  }
+
+  private resetInputValue(): void {
+    this.numInput.value = '';
     this.numInput.focus();
   }
 
@@ -42,6 +45,7 @@ export class MainBinaryNumberComponent extends AbsMain implements OnInit {
     this.ledService.turnOnLEDs();
     this.lockComponent = false;
     this.ledService.setPowerOn();
+    this.resetInputValue();
     setTimeout(() => this.lcdService.updateBinaryCode());
   }
 
