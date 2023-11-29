@@ -12,7 +12,7 @@
     "goalDesc": "Convert binary code on the left screen to number displayed on the right screen.",
 
     "howToUseKey": "How to use?",
-    "howToUseDesc": "Use the right screen to directly edit the number on it.\n Press the green validation button to confirm your answer."
+    "howToUseDesc": "Observe the binary code displayed on the left screen and write the corresponding number directly on the right screen. \n Press the green validation button to confirm your answer."
   },
 
   "numToBinDialog": {
@@ -20,7 +20,7 @@
     "goalDesc": "Convert the number on the left screen to binary code displayed on the right screen.",
 
     "howToUseKey": "How to use?",
-    "howToUseDesc": "Use the blue buttons to create different binary combinations.\n Press the green validation button to confirm your answer."
+    "howToUseDesc": "Use the blue buttons to create different binary combinations.\n Click on the blue buttons to activate the orange LEDs and click a second time to turn them off until you reach the desired combination. \n Press the green validation button to confirm your answer."
   },
 
   "welcomeDialog": {

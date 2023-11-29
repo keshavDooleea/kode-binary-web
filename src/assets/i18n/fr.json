@@ -9,18 +9,18 @@
 
   "binToNumDialog": {
     "goalKey": "Objectif",
-    "goalDesc": "Convertir le code binaire sur l'écran de gauche en nombre entier affiché sur l'écran de droite.",
+    "goalDesc": "Convertissez le code binaire sur l'écran de gauche en nombre entier affiché sur l'écran de droite.",
 
     "howToUseKey": "Comment utiliser?",
-    "howToUseDesc": "Utilisez l'écran de droite pour modifier directement le numéro qui s'y trouve. \n Appuyez sur le bouton valider en vert pour confirmer votre réponse."
+    "howToUseDesc": "Dans l’écran de droite, écrivez directement le nombre entier correspondant au code binaire affiché à gauche. \n Appuyez sur le bouton vert pour valider votre réponse."
   },
 
   "numToBinDialog": {
     "goalKey": "Objectif",
-    "goalDesc": "Convertir le numéro sur l'écran de gauche en code binaire affiché sur l'écran de droite.",
+    "goalDesc": "Convertissez le nombre entier sur l'écran de gauche en code binaire affiché sur l'écran de droite.",
 
     "howToUseKey": "Comment utiliser?",
-    "howToUseDesc": "Utilisez les boutons bleus pour créer différentes combinaisons binaires. \n Appuyez sur le bouton valider en vert pour confirmer votre réponse."
+    "howToUseDesc": "Utilisez les boutons bleus pour créer différentes combinaisons binaires. \n Cliquez pour activer les LEDs correspondantes et cliquez une seconde fois pour les désactiver jusqu’à être satisfait.es de la combinaison obtenue. \n Appuyez sur le bouton vert pour valider votre réponse."
   },
 
   "welcomeDialog": {
