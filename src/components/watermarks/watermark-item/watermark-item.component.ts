@@ -9,6 +9,9 @@ export class WatermarkItemComponent {
   @Input() textKey!: string;
   @Input() linkURL!: string;
   @Input() linkText!: string;
+  @Input() linkTextTranslate!: string;
   @Input() imgSrc!: string;
   @Input() imgAlt!: string;
+  @Input() textSuffixKey!: string;
+  @Input() isFlexColumn: boolean = false;
 }

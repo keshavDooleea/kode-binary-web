@@ -37,4 +37,11 @@ export class BinNumDialogComponent implements IDialogFn {
       descriptionKey: 'binToNumDialog.howToUseDesc',
     };
   }
+
+  getNoteContent(): IDialogContent {
+    return {
+      titleKey: 'commonDialogNote.noteKey',
+      descriptionKey: 'commonDialogNote.noteDesc',
+    };
+  }
 }

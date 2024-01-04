@@ -1,7 +1,12 @@
-<small>
+<small [ngStyle]="(isFlexColumn && { 'flex-direction': 'column' }) || null">
   {{ textKey | translate }}
   <a [href]="linkURL" target="_blank" rel="noopener">
-    <span>{{ linkText }}</span>
-    <img [src]="imgSrc" [alt]="imgAlt" />
+    <span *ngIf="linkText">{{ linkText }}</span>
+    <span *ngIf="linkTextTranslate">{{ linkTextTranslate | translate }}</span>
+    <img *ngIf="imgSrc" [src]="imgSrc" [alt]="imgAlt" />
   </a>
+  <ng-container *ngIf="textSuffixKey">
+    &nbsp;
+    {{ textSuffixKey | translate }}</ng-container
+  >
 </small>

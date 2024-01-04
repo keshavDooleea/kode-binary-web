@@ -37,4 +37,11 @@ export class NumBinDialogComponent implements IDialogFn {
       descriptionKey: 'numToBinDialog.howToUseDesc',
     };
   }
+
+  getNoteContent(): IDialogContent {
+    return {
+      titleKey: 'commonDialogNote.noteKey',
+      descriptionKey: 'commonDialogNote.noteDesc',
+    };
+  }
 }

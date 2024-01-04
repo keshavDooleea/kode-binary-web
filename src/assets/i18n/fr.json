@@ -23,6 +23,11 @@
     "howToUseDesc": "Utilisez les boutons bleus pour créer différentes combinaisons binaires. \n Cliquez pour activer les LEDs correspondantes et cliquez une seconde fois pour les désactiver jusqu’à être satisfait.es de la combinaison obtenue. \n Appuyez sur le bouton vert pour valider votre réponse."
   },
 
+  "commonDialogNote": {
+    "noteKey": "Note",
+    "noteDesc": "Les fils sur la planche à pain (breadboard) sont une version simplifiée d'un véritable schéma de circuit."
+  },
+
   "welcomeDialog": {
     "header": "Bonjour",
     "welcomeLeft": "Bienvenue sur",
@@ -38,5 +43,11 @@
   "watermark": {
     "developedBy": "Développé par",
     "code": "Code disponible sur"
+  },
+
+  "ingCourse": {
+    "prefix": "Réalisé dans le cadre du cours",
+    "class": "ING8270 – Conception d’ateliers pédagogiques en STIM",
+    "suffix": "à École Polytechnique de Montréal"
   }
 }

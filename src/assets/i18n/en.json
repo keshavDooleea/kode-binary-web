@@ -23,6 +23,11 @@
     "howToUseDesc": "Use the blue buttons to create different binary combinations.\n Click on the blue buttons to activate the orange LEDs and click a second time to turn them off until you reach the desired combination. \n Press the green validation button to confirm your answer."
   },
 
+  "commonDialogNote": {
+    "noteKey": "Note",
+    "noteDesc": "The wires on the breadboard are a simplified version of a real circuit diagram."
+  },
+
   "welcomeDialog": {
     "header": "Hello there",
     "welcomeLeft": "Welcome to",
@@ -38,5 +43,11 @@
   "watermark": {
     "developedBy": "Developed by",
     "code": "Code available on"
+  },
+
+  "ingCourse": {
+    "prefix": "Produced as part of the",
+    "class": "ING8270 – Design of Educational Workshops",
+    "suffix": "course at Polytechnique Montreal University"
   }
 }
